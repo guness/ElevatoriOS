@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		11A5ED1B4DA1E049792DAECE /* Pods_Elevator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28BECE571F6C5E18CCDAE7B /* Pods_Elevator.framework */; };
 		21AF00AC131C752C9695AC37 /* Pods_ElevatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2097343A01ECA647D84D052 /* Pods_ElevatorTests.framework */; };
+		B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B700870F20165F4B00A8A1EB /* MainViewController.swift */; };
+		B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7008713201660EB00A8A1EB /* PanelViewController.swift */; };
+		B70087162016686700A8A1EB /* SGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70087152016686700A8A1EB /* SGViewController.swift */; };
+		B70087182016696300A8A1EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70087172016696300A8A1EB /* Constants.swift */; };
 		B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FEE20150D5000DB0612 /* AppDelegate.swift */; };
-		B77B0FF120150D5000DB0612 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FF020150D5000DB0612 /* ViewController.swift */; };
+		B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FF020150D5000DB0612 /* SplashViewController.swift */; };
 		B77B0FF420150D5000DB0612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FF220150D5000DB0612 /* Main.storyboard */; };
 		B77B0FF720150D5000DB0612 /* Elevator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FF520150D5000DB0612 /* Elevator.xcdatamodeld */; };
 		B77B0FF920150D5000DB0612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FF820150D5000DB0612 /* Assets.xcassets */; };
@@ -43,9 +47,13 @@
 		9F93BE480DBB10C7DADD37CA /* Pods-Elevator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elevator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Elevator/Pods-Elevator.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2F7CAEA9832D4F895FB915 /* Pods-ElevatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B28BECE571F6C5E18CCDAE7B /* Pods_Elevator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elevator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B700870F20165F4B00A8A1EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B7008713201660EB00A8A1EB /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
+		B70087152016686700A8A1EB /* SGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGViewController.swift; sourceTree = "<group>"; };
+		B70087172016696300A8A1EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B77B0FEB20150D5000DB0612 /* Elevator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77B0FEE20150D5000DB0612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B77B0FF020150D5000DB0612 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B77B0FF020150D5000DB0612 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B77B0FF320150D5000DB0612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B77B0FF620150D5000DB0612 /* Elevator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elevator.xcdatamodel; sourceTree = "<group>"; };
 		B77B0FF820150D5000DB0612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +122,55 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B700870B20165EA800A8A1EB /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				B7008712201660B400A8A1EB /* panel */,
+				B700871120165F7C00A8A1EB /* splash */,
+				B700870E20165F0F00A8A1EB /* main */,
+				B70087152016686700A8A1EB /* SGViewController.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		B700870C20165EB200A8A1EB /* network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		B700870D20165EBB00A8A1EB /* db */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		B700870E20165F0F00A8A1EB /* main */ = {
+			isa = PBXGroup;
+			children = (
+				B700870F20165F4B00A8A1EB /* MainViewController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		B700871120165F7C00A8A1EB /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				B77B0FF020150D5000DB0612 /* SplashViewController.swift */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		B7008712201660B400A8A1EB /* panel */ = {
+			isa = PBXGroup;
+			children = (
+				B7008713201660EB00A8A1EB /* PanelViewController.swift */,
+			);
+			path = panel;
+			sourceTree = "<group>";
+		};
 		B77B0FE220150D5000DB0612 = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +196,16 @@
 		B77B0FED20150D5000DB0612 /* Elevator */ = {
 			isa = PBXGroup;
 			children = (
+				B700870D20165EBB00A8A1EB /* db */,
+				B700870C20165EB200A8A1EB /* network */,
+				B700870B20165EA800A8A1EB /* ui */,
 				B77B0FEE20150D5000DB0612 /* AppDelegate.swift */,
-				B77B0FF020150D5000DB0612 /* ViewController.swift */,
 				B77B0FF220150D5000DB0612 /* Main.storyboard */,
 				B77B0FF820150D5000DB0612 /* Assets.xcassets */,
 				B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */,
 				B77B0FFD20150D5000DB0612 /* Info.plist */,
 				B77B0FF520150D5000DB0612 /* Elevator.xcdatamodeld */,
+				B70087172016696300A8A1EB /* Constants.swift */,
 			);
 			path = Elevator;
 			sourceTree = "<group>";
@@ -486,8 +546,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77B0FF720150D5000DB0612 /* Elevator.xcdatamodeld in Sources */,
-				B77B0FF120150D5000DB0612 /* ViewController.swift in Sources */,
+				B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */,
+				B70087162016686700A8A1EB /* SGViewController.swift in Sources */,
 				B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */,
+				B70087182016696300A8A1EB /* Constants.swift in Sources */,
+				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
+				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
