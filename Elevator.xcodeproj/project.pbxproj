@@ -13,6 +13,8 @@
 		B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7008713201660EB00A8A1EB /* PanelViewController.swift */; };
 		B70087162016686700A8A1EB /* SGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70087152016686700A8A1EB /* SGViewController.swift */; };
 		B70087182016696300A8A1EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70087172016696300A8A1EB /* Constants.swift */; };
+		B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A2A342017AED00063A5C3 /* MenuViewController.swift */; };
+		B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */; };
 		B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FEE20150D5000DB0612 /* AppDelegate.swift */; };
 		B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FF020150D5000DB0612 /* SplashViewController.swift */; };
 		B77B0FF420150D5000DB0612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FF220150D5000DB0612 /* Main.storyboard */; };
@@ -51,6 +53,9 @@
 		B7008713201660EB00A8A1EB /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 		B70087152016686700A8A1EB /* SGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGViewController.swift; sourceTree = "<group>"; };
 		B70087172016696300A8A1EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B70A2A342017AED00063A5C3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B70A2A382017E2550063A5C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open 24 Display St.ttf"; sourceTree = "<group>"; };
 		B77B0FEB20150D5000DB0612 /* Elevator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77B0FEE20150D5000DB0612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77B0FF020150D5000DB0612 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		B700870B20165EA800A8A1EB /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				B70A2A332017AEAB0063A5C3 /* menu */,
 				B7008712201660B400A8A1EB /* panel */,
 				B700871120165F7C00A8A1EB /* splash */,
 				B700870E20165F0F00A8A1EB /* main */,
@@ -171,6 +177,22 @@
 			path = panel;
 			sourceTree = "<group>";
 		};
+		B70A2A332017AEAB0063A5C3 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				B70A2A342017AED00063A5C3 /* MenuViewController.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		B70A2A3C2018165D0063A5C3 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		B77B0FE220150D5000DB0612 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +218,7 @@
 		B77B0FED20150D5000DB0612 /* Elevator */ = {
 			isa = PBXGroup;
 			children = (
+				B70A2A3C2018165D0063A5C3 /* fonts */,
 				B700870D20165EBB00A8A1EB /* db */,
 				B700870C20165EB200A8A1EB /* network */,
 				B700870B20165EA800A8A1EB /* ui */,
@@ -346,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */,
+				B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */,
 				B77B0FF920150D5000DB0612 /* Assets.xcassets in Resources */,
 				B77B0FF420150D5000DB0612 /* Main.storyboard in Resources */,
 			);
@@ -379,6 +403,8 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -388,6 +414,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -552,6 +580,7 @@
 				B70087182016696300A8A1EB /* Constants.swift in Sources */,
 				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
+				B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +620,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B77B0FF320150D5000DB0612 /* Base */,
+				B70A2A382017E2550063A5C3 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

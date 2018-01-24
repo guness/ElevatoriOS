@@ -44,7 +44,14 @@ open class SGViewController: UIViewController {
     // MARK: Navigation
     func toMain(){
         if !(self is MainViewController) {
+            self.modalTransitionStyle = .crossDissolve
             performSegue(withIdentifier: "toMain", sender: self)
+        }
+    }
+    func toPanel(){
+        if !(self is PanelViewController) {
+            self.modalTransitionStyle = .crossDissolve
+            performSegue(withIdentifier: "toPanel", sender: self)
         }
     }
 }

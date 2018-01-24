@@ -15,7 +15,8 @@ target 'Elevator' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'RealmSwift'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 
   target 'ElevatorTests' do
