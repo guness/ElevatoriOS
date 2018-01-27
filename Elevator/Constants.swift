@@ -9,13 +9,13 @@
 import Foundation
 
 struct kLog {
-    
-    #if DEBUG
+
+#if DEBUG
     static let Trace = true
-    #else
+#else
     static let Trace = true
-    #endif
-    
+#endif
+
     static let TraceViews = true
     static let TracePackets = true
     static let TraceApplication = true

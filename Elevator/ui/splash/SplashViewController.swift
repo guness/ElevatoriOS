@@ -14,22 +14,22 @@ class SplashViewController: SGViewController {
     let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     let mainScheduler = MainScheduler.instance
     let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
+
         Single.just(true)
-            .delay(RxTimeInterval(2), scheduler: MainScheduler.instance)
-            .subscribeOn(backgroundScheduler)
-            .observeOn(mainScheduler)
-            .subscribe { _ in
-                self.toMain()
-            }
-            .disposed(by: disposeBag)
+                .delay(RxTimeInterval(2), scheduler: MainScheduler.instance)
+                .subscribeOn(backgroundScheduler)
+                .observeOn(mainScheduler)
+                .subscribe { _ in
+                    self.toMain()
+                }
+                .disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,38 +17,44 @@ open class SGViewController: UIViewController {
             os_log("%@: viewDidLoad", String(describing: type(of: self)))
         }
     }
+
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (kLog.TraceViews && kLog.Trace) {
             os_log("%@: viewWillAppear", String(describing: type(of: self)))
         }
     }
+
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (kLog.TraceViews && kLog.Trace) {
             os_log("%@: viewDidAppear", String(describing: type(of: self)))
         }
     }
+
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if (kLog.TraceViews && kLog.Trace) {
             os_log("%@: viewWillDisappear", String(describing: type(of: self)))
         }
     }
+
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if (kLog.TraceViews && kLog.Trace) {
             os_log("%@: viewDidDisappear", String(describing: type(of: self)))
         }
     }
+
     // MARK: Navigation
-    func toMain(){
+    func toMain() {
         if !(self is MainViewController) {
             self.modalTransitionStyle = .crossDissolve
             performSegue(withIdentifier: "toMain", sender: self)
         }
     }
-    func toPanel(){
+
+    func toPanel() {
         if !(self is PanelViewController) {
             self.modalTransitionStyle = .crossDissolve
             performSegue(withIdentifier: "toPanel", sender: self)
