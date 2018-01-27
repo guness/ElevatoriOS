@@ -19,7 +19,7 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         return instance
     }()
 
-    var webSocket: SRWebSocket!
+    private var webSocket: SRWebSocket!
     var isConnected = false
 
     public func connect(token: String?) {
@@ -32,7 +32,16 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         }
     }
 
-    public func webSocketDidOpen(_ webSocket: SRWebSocket) {
+    public func sendMessage<T>(message: T) where T: AbstractMessage {
+        let json = try! String(data: JSONEncoder().encode(message), encoding: .utf8)!
+
+        if kLog.TracePackets && kLog.Trace {
+            os_log("%@: sendMessage %@", String(describing: type(of: self)), json)
+        }
+        webSocket.send(json)
+    }
+
+    func webSocketDidOpen(_ webSocket: SRWebSocket) {
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: webSocketDidOpen", String(describing: type(of: self)))
         }
@@ -41,36 +50,35 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         webSocket.sendPing(data)
     }
 
-    // @objc(webSocket:didReceiveMessageWithString:)
-    public func webSocket(_ webSocket: SRWebSocket, didReceiveMessageWith string: String) {
+    func webSocket(_ webSocket: SRWebSocket, didReceiveMessageWith string: String) {
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: didReceiveMessageWith: %@", String(describing: type(of: self)), string)
         }
     }
 
-    public func webSocket(_ webSocket: SRWebSocket, didReceiveMessage message: Any!) {
+    func webSocket(_ webSocket: SRWebSocket, didReceiveMessage message: Any!) {
         if kLog.TracePackets && kLog.Trace {
-            if message is NSData {
-                os_log("%@: didReceiveMessage: %@", String(describing: type(of: self)), message as! NSData)
-            } else if message is NSString {
-                os_log("%@: didReceiveMessage: %@", String(describing: type(of: self)), message as! NSString)
+            if message is Data {
+                os_log("%@: didReceiveMessage binary length: %@", String(describing: type(of: self)), (message as! Data).count)
+            } else if message is String {
+                os_log("%@: didReceiveMessage: %@", String(describing: type(of: self)), message as! String)
             }
         }
     }
 
-    public func webSocket(_ webSocket: SRWebSocket, didFailWithError error: Error) {
+    func webSocket(_ webSocket: SRWebSocket, didFailWithError error: Error) {
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: didFailWithError: %@", String(describing: error))
         }
     }
 
-    public func webSocket(_ webSocket: SRWebSocket, didCloseWithCode code: NSInteger, reason: String, wasClean clean: Bool) {
+    func webSocket(_ webSocket: SRWebSocket, didCloseWithCode code: Int, reason: String, wasClean clean: Bool) {
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: didCloseWithCode: %@", String(describing: code))
         }
     }
 
-    public func webSocket(_ webSocket: SRWebSocket!, didReceivePong pongPayload: Data!) {
+    func webSocket(_ webSocket: SRWebSocket!, didReceivePong pongPayload: Data!) {
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: didReceivePong: %@", String(describing: pongPayload))
         }

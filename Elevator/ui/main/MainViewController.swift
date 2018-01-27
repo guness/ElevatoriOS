@@ -17,6 +17,10 @@ class MainViewController: SGViewController {
 
 
     @IBAction func onL1Clicked(_ sender: Any) {
+
+        let echo = Echo()
+        echo.echo["KABUUM"] = "TROLOLO"
+        NetworkService.sharedInstance.sendMessage(message: echo)
     }
 
     @IBAction func onL2Clicked(_ sender: Any) {
