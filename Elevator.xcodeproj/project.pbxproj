@@ -15,6 +15,8 @@
 		B70087182016696300A8A1EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70087172016696300A8A1EB /* Constants.swift */; };
 		B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A2A342017AED00063A5C3 /* MenuViewController.swift */; };
 		B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */; };
+		B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7180870201BED50002A2A2C /* NetworkUtils.swift */; };
+		B7180873201C63E7002A2A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7180872201C63E7002A2A2C /* GoogleService-Info.plist */; };
 		B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FEE20150D5000DB0612 /* AppDelegate.swift */; };
 		B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FF020150D5000DB0612 /* SplashViewController.swift */; };
 		B77B0FF420150D5000DB0612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FF220150D5000DB0612 /* Main.storyboard */; };
@@ -23,6 +25,7 @@
 		B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */; };
 		B77B100720150D5100DB0612 /* ElevatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B100620150D5100DB0612 /* ElevatorTests.swift */; };
 		B77B101220150D5100DB0612 /* ElevatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B101120150D5100DB0612 /* ElevatorUITests.swift */; };
+		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,8 @@
 		B70A2A342017AED00063A5C3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B70A2A382017E2550063A5C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open 24 Display St.ttf"; sourceTree = "<group>"; };
+		B7180870201BED50002A2A2C /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		B7180872201C63E7002A2A2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B77B0FEB20150D5000DB0612 /* Elevator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77B0FEE20150D5000DB0612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77B0FF020150D5000DB0612 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		B77B100D20150D5100DB0612 /* ElevatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElevatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77B101120150D5100DB0612 /* ElevatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorUITests.swift; sourceTree = "<group>"; };
 		B77B101320150D5100DB0612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB90845DD8358BA4821DCF /* Pods-ElevatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C77888A054C2485E7A2C2E3B /* Pods-ElevatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorTests/Pods-ElevatorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		B700870C20165EB200A8A1EB /* network */ = {
 			isa = PBXGroup;
 			children = (
+				B7FB21F820193D0B00B3B49D /* NetworkService.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -193,6 +200,14 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		B718086F201BED37002A2A2C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				B7180870201BED50002A2A2C /* NetworkUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		B77B0FE220150D5000DB0612 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +233,7 @@
 		B77B0FED20150D5000DB0612 /* Elevator */ = {
 			isa = PBXGroup;
 			children = (
+				B718086F201BED37002A2A2C /* utils */,
 				B70A2A3C2018165D0063A5C3 /* fonts */,
 				B700870D20165EBB00A8A1EB /* db */,
 				B700870C20165EB200A8A1EB /* network */,
@@ -227,6 +243,7 @@
 				B77B0FF820150D5000DB0612 /* Assets.xcassets */,
 				B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */,
 				B77B0FFD20150D5000DB0612 /* Info.plist */,
+				B7180872201C63E7002A2A2C /* GoogleService-Info.plist */,
 				B77B0FF520150D5000DB0612 /* Elevator.xcdatamodeld */,
 				B70087172016696300A8A1EB /* Constants.swift */,
 			);
@@ -370,6 +387,7 @@
 			files = (
 				B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */,
 				B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */,
+				B7180873201C63E7002A2A2C /* GoogleService-Info.plist in Resources */,
 				B77B0FF920150D5000DB0612 /* Assets.xcassets in Resources */,
 				B77B0FF420150D5000DB0612 /* Main.storyboard in Resources */,
 			);
@@ -577,6 +595,8 @@
 				B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */,
 				B70087162016686700A8A1EB /* SGViewController.swift in Sources */,
 				B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */,
+				B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */,
+				B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */,
 				B70087182016696300A8A1EB /* Constants.swift in Sources */,
 				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
@@ -754,7 +774,7 @@
 				INFOPLIST_FILE = Elevator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.guness.Elevator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guness.elevator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -771,7 +791,7 @@
 				INFOPLIST_FILE = Elevator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.guness.Elevator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guness.elevator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 4.0;

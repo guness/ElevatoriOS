@@ -12,16 +12,6 @@ class MainViewController: SGViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: "7-Segment")
-            {
-                print("== \(names)")
-            }
-        }
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

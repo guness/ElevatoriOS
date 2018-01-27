@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Fabric
 import Crashlytics
+import Firebase
+import os.log
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if RELEASE
             Fabric.with([Crashlytics.self]);
         #endif
+        
+        FirebaseApp.configure()
         return true
     }
     
@@ -37,10 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        InstanceID.instanceID().getID(handler: { (token:String?, error:Error?) in
+            if error != nil {
+                os_log("%@: applicationWillEnterForeground error: %@", String(describing: type(of: self)), error.debugDescription)
+            }
+            NetworkService.sharedInstance.connect(token:token)
+        })
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        InstanceID.instanceID().getID(handler: { (token:String?, error:Error?) in
+            if error != nil {
+                os_log("%@: applicationDidBecomeActive error: %@", String(describing: type(of: self)), error.debugDescription)
+            }
+            NetworkService.sharedInstance.connect(token:token)
+        
+        })
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

@@ -13,10 +13,14 @@ struct kLog {
     #if DEBUG
     static let Trace = true
     #else
-    static let Trace = false
+    static let Trace = true
     #endif
     
     static let TraceViews = true
     static let TracePackets = true
     static let TraceApplication = true
+}
+
+struct Constants {
+    static let HOST = "ws://elevator.onintech.com/mobile"
 }
