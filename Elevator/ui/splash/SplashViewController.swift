@@ -6,8 +6,8 @@
 //  Copyright © 2018 Sinan Güneş. All rights reserved.
 //
 
-import RxSwift
 import UIKit
+import RxSwift
 
 class SplashViewController: SGViewController {
 

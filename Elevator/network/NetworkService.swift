@@ -132,5 +132,13 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         fetch.uuid = uuid
         sendMessage(message: FetchInfo(fetch: fetch))
     }
+
+    func sendListenDevice(device: String) {
+        sendMessage(message: ListenDevice(device: device))
+    }
+
+    func sendStopListenDevice(device: String) {
+        sendMessage(message: StopListening(device: device))
+    }
 }
 

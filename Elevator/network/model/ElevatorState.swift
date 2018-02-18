@@ -9,10 +9,10 @@
 import Foundation
 
 class ElevatorState: Codable {
-    var device: String
-    var online: Bool
-    var floor: Int
-    var busy: Bool
+    var device: String?
+    var online: Bool?
+    var floor: Int?
+    var busy: Bool?
 
     /**
     * UP or DOWN

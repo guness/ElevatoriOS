@@ -18,5 +18,3 @@ class FetchInfo: AbstractMessage {
         self.fetch = fetch
     }
 }
-
-//f5bbd000-d9c0-4bd5-b4c6-06d3ca605536
