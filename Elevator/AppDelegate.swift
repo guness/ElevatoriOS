@@ -11,6 +11,7 @@ import CoreData
 import Fabric
 import Crashlytics
 import Firebase
+import RealmSwift
 import os.log
 
 @UIApplicationMain
@@ -24,8 +25,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if RELEASE
         Fabric.with([Crashlytics.self]);
 #endif
-
         FirebaseApp.configure()
+
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        /*
+        let realmURLs = [
+            realmURL,
+            realmURL.appendingPathExtension("lock"),
+            realmURL.appendingPathExtension("note"),
+            realmURL.appendingPathExtension("management")
+        ]
+        for URL in realmURLs {
+            do {
+                try FileManager.default.removeItem(at: URL)
+            } catch {
+                // handle error
+            }
+        }
+        */
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
+            // potentially lengthy data migration
+        })
+        Realm.Configuration.defaultConfiguration = config
+        os_log("%@: didFinishLaunchingWithOptions realm File: %@", String(describing: type(of: self)), realmURL.absoluteString)
         return true
     }
 
@@ -41,22 +63,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        InstanceID.instanceID().getID(handler: { (token: String?, error: Error?) in
+
+        InstanceID.instanceID().getID(handler: { (_: String?, error: Error?) in
             if error != nil {
                 os_log("%@: applicationWillEnterForeground error: %@", String(describing: type(of: self)), error.debugDescription)
             }
-            NetworkService.sharedInstance.connect(token: token)
+            let token = InstanceID.instanceID().token()
+            NetworkService.sharedInstance.connect(token)
         })
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        InstanceID.instanceID().getID(handler: { (token: String?, error: Error?) in
+        InstanceID.instanceID().getID(handler: { (_: String?, error: Error?) in
             if error != nil {
-                os_log("%@: applicationDidBecomeActive error: %@", String(describing: type(of: self)), error.debugDescription)
+                os_log("%@: applicationWillEnterForeground error: %@", String(describing: type(of: self)), error.debugDescription)
             }
-            NetworkService.sharedInstance.connect(token: token)
-
+            let token = InstanceID.instanceID().token()
+            NetworkService.sharedInstance.connect(token)
         })
     }
 

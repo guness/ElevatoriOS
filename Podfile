@@ -10,8 +10,11 @@ target 'Elevator' do
 
   # Pods for Elevator
   pod 'SocketRocket', :inhibit_warnings => true
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'FirebaseInstanceID'
+  pod 'Firebase/Performance'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'RealmSwift'

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11A5ED1B4DA1E049792DAECE /* Pods_Elevator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28BECE571F6C5E18CCDAE7B /* Pods_Elevator.framework */; };
 		21AF00AC131C752C9695AC37 /* Pods_ElevatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2097343A01ECA647D84D052 /* Pods_ElevatorTests.framework */; };
+		B667738CF0CDFD4637A8C07C /* MessageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6677B7F64F4EEAB0913086E /* MessageUtils.swift */; };
 		B66774795DADC38692FC605E /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6677066DB57A2D10892236B /* Echo.swift */; };
 		B6677913477C34FB5CA7FDC3 /* AbstractMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B667724139A4C81FCE8F993F /* AbstractMessage.swift */; };
 		B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B700870F20165F4B00A8A1EB /* MainViewController.swift */; };
@@ -27,6 +28,20 @@
 		B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */; };
 		B77B100720150D5100DB0612 /* ElevatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B100620150D5100DB0612 /* ElevatorTests.swift */; };
 		B77B101220150D5100DB0612 /* ElevatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B101120150D5100DB0612 /* ElevatorUITests.swift */; };
+		B7A9D4F1203966E300C80DCF /* FetchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F0203966E300C80DCF /* FetchInfo.swift */; };
+		B7A9D4F32039677500C80DCF /* ListenDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F22039677500C80DCF /* ListenDevice.swift */; };
+		B7A9D4F5203967A500C80DCF /* RelayOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F4203967A500C80DCF /* RelayOrder.swift */; };
+		B7A9D4F7203967B300C80DCF /* StopListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F6203967B300C80DCF /* StopListening.swift */; };
+		B7A9D4FA203967CA00C80DCF /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F9203967CA00C80DCF /* GroupInfo.swift */; };
+		B7A9D4FC203967D600C80DCF /* RelayOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4FB203967D600C80DCF /* RelayOrderResponse.swift */; };
+		B7A9D4FE203967E000C80DCF /* UpdateState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4FD203967E000C80DCF /* UpdateState.swift */; };
+		B7A9D501203969AC00C80DCF /* Elevator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D500203969AC00C80DCF /* Elevator.swift */; };
+		B7A9D503203969B200C80DCF /* ElevatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D502203969B200C80DCF /* ElevatorState.swift */; };
+		B7A9D505203969B800C80DCF /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D504203969B800C80DCF /* Fetch.swift */; };
+		B7A9D507203969BD00C80DCF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D506203969BD00C80DCF /* Group.swift */; };
+		B7A9D509203969C100C80DCF /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D508203969C100C80DCF /* Order.swift */; };
+		B7A9D50B20399C1100C80DCF /* ElevatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */; };
+		B7A9D50D2039B70500C80DCF /* ElevatorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */; };
 		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +71,7 @@
 		B28BECE571F6C5E18CCDAE7B /* Pods_Elevator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elevator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6677066DB57A2D10892236B /* Echo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
 		B667724139A4C81FCE8F993F /* AbstractMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMessage.swift; sourceTree = "<group>"; };
+		B6677B7F64F4EEAB0913086E /* MessageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUtils.swift; sourceTree = "<group>"; };
 		B700870F20165F4B00A8A1EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B7008713201660EB00A8A1EB /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 		B70087152016686700A8A1EB /* SGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +95,20 @@
 		B77B100D20150D5100DB0612 /* ElevatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElevatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77B101120150D5100DB0612 /* ElevatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorUITests.swift; sourceTree = "<group>"; };
 		B77B101320150D5100DB0612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7A9D4F0203966E300C80DCF /* FetchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchInfo.swift; sourceTree = "<group>"; };
+		B7A9D4F22039677500C80DCF /* ListenDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenDevice.swift; sourceTree = "<group>"; };
+		B7A9D4F4203967A500C80DCF /* RelayOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayOrder.swift; sourceTree = "<group>"; };
+		B7A9D4F6203967B300C80DCF /* StopListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListening.swift; sourceTree = "<group>"; };
+		B7A9D4F9203967CA00C80DCF /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		B7A9D4FB203967D600C80DCF /* RelayOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayOrderResponse.swift; sourceTree = "<group>"; };
+		B7A9D4FD203967E000C80DCF /* UpdateState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateState.swift; sourceTree = "<group>"; };
+		B7A9D500203969AC00C80DCF /* Elevator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevator.swift; sourceTree = "<group>"; };
+		B7A9D502203969B200C80DCF /* ElevatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorState.swift; sourceTree = "<group>"; };
+		B7A9D504203969B800C80DCF /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
+		B7A9D506203969BD00C80DCF /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B7A9D508203969C100C80DCF /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorRepository.swift; sourceTree = "<group>"; };
+		B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorEntity.swift; sourceTree = "<group>"; };
 		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB90845DD8358BA4821DCF /* Pods-ElevatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				B667724139A4C81FCE8F993F /* AbstractMessage.swift */,
+				B7A9D4F8203967B800C80DCF /* inc */,
 				B66778F586CB90AAE6E0C779 /* out */,
+				B6677B7F64F4EEAB0913086E /* MessageUtils.swift */,
 			);
 			path = message;
 			sourceTree = "<group>";
@@ -150,6 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				B6677066DB57A2D10892236B /* Echo.swift */,
+				B7A9D4F0203966E300C80DCF /* FetchInfo.swift */,
+				B7A9D4F22039677500C80DCF /* ListenDevice.swift */,
+				B7A9D4F4203967A500C80DCF /* RelayOrder.swift */,
+				B7A9D4F6203967B300C80DCF /* StopListening.swift */,
 			);
 			path = out;
 			sourceTree = "<group>";
@@ -170,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				B7FB21F820193D0B00B3B49D /* NetworkService.swift */,
+				B7A9D4FF2039699700C80DCF /* model */,
 				B66771F69A7B4466AD50A88D /* message */,
 			);
 			path = network;
@@ -178,6 +215,8 @@
 		B700870D20165EBB00A8A1EB /* db */ = {
 			isa = PBXGroup;
 			children = (
+				B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */,
+				B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -255,19 +294,19 @@
 		B77B0FED20150D5000DB0612 /* Elevator */ = {
 			isa = PBXGroup;
 			children = (
+				B77B0FEE20150D5000DB0612 /* AppDelegate.swift */,
+				B70087172016696300A8A1EB /* Constants.swift */,
 				B718086F201BED37002A2A2C /* utils */,
 				B70A2A3C2018165D0063A5C3 /* fonts */,
 				B700870D20165EBB00A8A1EB /* db */,
 				B700870C20165EB200A8A1EB /* network */,
 				B700870B20165EA800A8A1EB /* ui */,
-				B77B0FEE20150D5000DB0612 /* AppDelegate.swift */,
 				B77B0FF220150D5000DB0612 /* Main.storyboard */,
 				B77B0FF820150D5000DB0612 /* Assets.xcassets */,
 				B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */,
 				B77B0FFD20150D5000DB0612 /* Info.plist */,
 				B7180872201C63E7002A2A2C /* GoogleService-Info.plist */,
 				B77B0FF520150D5000DB0612 /* Elevator.xcdatamodeld */,
-				B70087172016696300A8A1EB /* Constants.swift */,
 			);
 			path = Elevator;
 			sourceTree = "<group>";
@@ -288,6 +327,28 @@
 				B77B101320150D5100DB0612 /* Info.plist */,
 			);
 			path = ElevatorUITests;
+			sourceTree = "<group>";
+		};
+		B7A9D4F8203967B800C80DCF /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				B7A9D4F9203967CA00C80DCF /* GroupInfo.swift */,
+				B7A9D4FB203967D600C80DCF /* RelayOrderResponse.swift */,
+				B7A9D4FD203967E000C80DCF /* UpdateState.swift */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		B7A9D4FF2039699700C80DCF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B7A9D500203969AC00C80DCF /* Elevator.swift */,
+				B7A9D502203969B200C80DCF /* ElevatorState.swift */,
+				B7A9D504203969B800C80DCF /* Fetch.swift */,
+				B7A9D506203969BD00C80DCF /* Group.swift */,
+				B7A9D508203969C100C80DCF /* Order.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +500,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Elevator/Pods-Elevator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -450,6 +512,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -616,15 +679,30 @@
 				B77B0FF720150D5000DB0612 /* Elevator.xcdatamodeld in Sources */,
 				B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */,
 				B70087162016686700A8A1EB /* SGViewController.swift in Sources */,
+				B7A9D507203969BD00C80DCF /* Group.swift in Sources */,
 				B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */,
+				B7A9D50B20399C1100C80DCF /* ElevatorRepository.swift in Sources */,
+				B7A9D4FE203967E000C80DCF /* UpdateState.swift in Sources */,
+				B7A9D501203969AC00C80DCF /* Elevator.swift in Sources */,
+				B7A9D4F5203967A500C80DCF /* RelayOrder.swift in Sources */,
+				B7A9D503203969B200C80DCF /* ElevatorState.swift in Sources */,
 				B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */,
 				B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */,
 				B70087182016696300A8A1EB /* Constants.swift in Sources */,
+				B7A9D509203969C100C80DCF /* Order.swift in Sources */,
+				B7A9D4F7203967B300C80DCF /* StopListening.swift in Sources */,
 				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
+				B7A9D50D2039B70500C80DCF /* ElevatorEntity.swift in Sources */,
+				B7A9D4F32039677500C80DCF /* ListenDevice.swift in Sources */,
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
 				B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */,
 				B6677913477C34FB5CA7FDC3 /* AbstractMessage.swift in Sources */,
+				B7A9D4FC203967D600C80DCF /* RelayOrderResponse.swift in Sources */,
 				B66774795DADC38692FC605E /* Echo.swift in Sources */,
+				B7A9D4F1203966E300C80DCF /* FetchInfo.swift in Sources */,
+				B667738CF0CDFD4637A8C07C /* MessageUtils.swift in Sources */,
+				B7A9D4FA203967CA00C80DCF /* GroupInfo.swift in Sources */,
+				B7A9D505203969B800C80DCF /* Fetch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +806,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -779,7 +857,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -796,7 +874,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FB6XQHE4X3;
 				INFOPLIST_FILE = Elevator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guness.elevator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FB6XQHE4X3;
 				INFOPLIST_FILE = Elevator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guness.elevator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
