@@ -9,10 +9,10 @@
 import Foundation
 
 class Elevator: Codable {
-    var id: Int64
-    var device: String
-    var min_floor: Int
-    var floor_count: Int
+    var id: Int64 = 0
+    var device: String = ""
+    var min_floor: Int = 0
+    var floor_count: Int = 0
     var address: String?
     var description: String?
     var latitude: Float?

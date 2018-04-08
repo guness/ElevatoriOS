@@ -9,8 +9,8 @@
 import Foundation
 
 class Group: Codable {
-    var id: Int64
-    var uuid: String
+    var id: Int64 = 0
+    var uuid: String = ""
     var description: String?
     var elevators: [Elevator] = []
 }

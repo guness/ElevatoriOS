@@ -9,6 +9,6 @@
 import Foundation
 
 class Order: Codable {
-    var device: String
-    var floor: Int
+    var device: String = ""
+    var floor: Int = 0
 }

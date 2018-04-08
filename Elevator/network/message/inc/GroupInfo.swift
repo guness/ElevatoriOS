@@ -12,5 +12,5 @@ class GroupInfo: AbstractMessage {
     let _type = "GroupInfo"
     let version = 2
 
-    let group: Group?
+    var group: Group? = nil
 }
