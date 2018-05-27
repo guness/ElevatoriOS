@@ -1,5 +1,5 @@
 //
-//  GroupListViewController.swift
+//  GroupsViewController.swift
 //  Elevator
 //
 //  Created by Sinan Güneş on 13.05.2018.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RealmSwift
 
-class GroupListViewController: SGViewController, UITableViewDataSource, UITableViewDelegate {
+class GroupsViewController: SGViewController, UITableViewDataSource, UITableViewDelegate {
     
     var notificationToken: NotificationToken? = nil
     var groups: Results<GroupEntity>? = nil

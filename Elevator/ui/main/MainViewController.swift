@@ -37,9 +37,11 @@ class MainViewController: SGViewController {
     }
 
     @IBAction func onR2Clicked(_ sender: Any) {
+        toGroupPicker(action: GroupAction.Pick)
     }
 
     @IBAction func onR3Clicked(_ sender: Any) {
+        toElevatorPicker(action: ElevatorAction.Pick)
     }
 
     @IBAction func onR4Clicked(_ sender: Any) {

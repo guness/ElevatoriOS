@@ -70,11 +70,19 @@ open class SGViewController: UIViewController {
         }
     }
     
-    func toGroupList(action:GroupAction) {
-        if !(self is GroupListViewController) {
+    func toGroupPicker(action:GroupAction) {
+        if !(self is GroupsViewController) {
             self.modalTransitionStyle = .crossDissolve
-            intents["toGroupList"] = action
-            performSegue(withIdentifier: "toGroupList", sender: self)
+            intents["toGroupPicker"] = action
+            performSegue(withIdentifier: "toGroupPicker", sender: self)
+        }
+    }
+    
+    func toElevatorPicker(action:ElevatorAction) {
+        if !(self is ElevatorsViewController) {
+            self.modalTransitionStyle = .crossDissolve
+            intents["toElevatorPicker"] = action
+            performSegue(withIdentifier: "toElevatorPicker", sender: self)
         }
     }
     
@@ -90,13 +98,18 @@ open class SGViewController: UIViewController {
         if let identifier = segue.identifier {
             if let intent = intents[identifier]{
                 switch identifier {
-                case "toGroupList":
-                    let viewController = segue.destination as! GroupListViewController
+                case "toGroupPicker":
+                    let viewController = segue.destination as! GroupsViewController
                     viewController.intent = intent as? GroupAction
                     
                 case "toInfo":
                     let viewController = segue.destination as! InfoViewController
                     viewController.intent = intent as? String
+                    
+                case "toElevatorPicker":
+                    let viewController = segue.destination as! ElevatorsViewController
+                    viewController.intent = intent as? ElevatorAction
+                    
                 default:
                     print("unhandled case: "+identifier)
                 }

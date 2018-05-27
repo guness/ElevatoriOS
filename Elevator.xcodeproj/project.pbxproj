@@ -22,7 +22,7 @@
 		B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7180870201BED50002A2A2C /* NetworkUtils.swift */; };
 		B7180873201C63E7002A2A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7180872201C63E7002A2A2C /* GoogleService-Info.plist */; };
 		B75B468D20A74A8800827CBE /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B468C20A74A8800827CBE /* GroupEntity.swift */; };
-		B75B469020A7A6A700827CBE /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B468F20A7A6A700827CBE /* GroupListViewController.swift */; };
+		B75B469020A7A6A700827CBE /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B468F20A7A6A700827CBE /* GroupsViewController.swift */; };
 		B75B469220A86ECA00827CBE /* GroupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B469120A86ECA00827CBE /* GroupAction.swift */; };
 		B75B469520A87A9B00827CBE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B469420A87A9B00827CBE /* ScanViewController.swift */; };
 		B77B0FEF20150D5000DB0612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B0FEE20150D5000DB0612 /* AppDelegate.swift */; };
@@ -48,6 +48,9 @@
 		B7A9D50B20399C1100C80DCF /* ElevatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */; };
 		B7A9D50D2039B70500C80DCF /* ElevatorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */; };
 		B7B0A91320B9F177008F9EAC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91220B9F177008F9EAC /* InfoViewController.swift */; };
+		B7B0A91620BA3B69008F9EAC /* ElevatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91520BA3B69008F9EAC /* ElevatorsViewController.swift */; };
+		B7B0A91920BA3D76008F9EAC /* ElevatorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91820BA3D76008F9EAC /* ElevatorAction.swift */; };
+		B7B0A91B20BA3EBB008F9EAC /* ElevatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */; };
 		B7BF63A1207A6951001CE9CE /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF63A0207A6951001CE9CE /* ButtonCell.swift */; };
 		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
@@ -91,7 +94,7 @@
 		B7180870201BED50002A2A2C /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		B7180872201C63E7002A2A2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B75B468C20A74A8800827CBE /* GroupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEntity.swift; sourceTree = "<group>"; };
-		B75B468F20A7A6A700827CBE /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
+		B75B468F20A7A6A700827CBE /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		B75B469120A86ECA00827CBE /* GroupAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAction.swift; sourceTree = "<group>"; };
 		B75B469420A87A9B00827CBE /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		B77B0FEB20150D5000DB0612 /* Elevator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elevator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +126,9 @@
 		B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorRepository.swift; sourceTree = "<group>"; };
 		B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorEntity.swift; sourceTree = "<group>"; };
 		B7B0A91220B9F177008F9EAC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B7B0A91520BA3B69008F9EAC /* ElevatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorsViewController.swift; sourceTree = "<group>"; };
+		B7B0A91820BA3D76008F9EAC /* ElevatorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorAction.swift; sourceTree = "<group>"; };
+		B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorCell.swift; sourceTree = "<group>"; };
 		B7BF63A0207A6951001CE9CE /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,9 +214,9 @@
 		B700870B20165EA800A8A1EB /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0A91720BA3BD3008F9EAC /* pickers */,
 				B7B0A91120B9F15A008F9EAC /* info */,
 				B75B469320A87A8A00827CBE /* scan */,
-				B75B468E20A7A68600827CBE /* groups */,
 				B70A2A332017AEAB0063A5C3 /* menu */,
 				B7008712201660B400A8A1EB /* panel */,
 				B700871120165F7C00A8A1EB /* splash */,
@@ -293,7 +299,7 @@
 		B75B468E20A7A68600827CBE /* groups */ = {
 			isa = PBXGroup;
 			children = (
-				B75B468F20A7A6A700827CBE /* GroupListViewController.swift */,
+				B75B468F20A7A6A700827CBE /* GroupsViewController.swift */,
 				B75B469120A86ECA00827CBE /* GroupAction.swift */,
 			);
 			path = groups;
@@ -395,6 +401,25 @@
 				B7B0A91220B9F177008F9EAC /* InfoViewController.swift */,
 			);
 			path = info;
+			sourceTree = "<group>";
+		};
+		B7B0A91420BA3B40008F9EAC /* elevators */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0A91520BA3B69008F9EAC /* ElevatorsViewController.swift */,
+				B7B0A91820BA3D76008F9EAC /* ElevatorAction.swift */,
+				B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */,
+			);
+			path = elevators;
+			sourceTree = "<group>";
+		};
+		B7B0A91720BA3BD3008F9EAC /* pickers */ = {
+			isa = PBXGroup;
+			children = (
+				B75B468E20A7A68600827CBE /* groups */,
+				B7B0A91420BA3B40008F9EAC /* elevators */,
+			);
+			path = pickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,7 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B75B469020A7A6A700827CBE /* GroupListViewController.swift in Sources */,
+				B75B469020A7A6A700827CBE /* GroupsViewController.swift in Sources */,
 				B77B0FF720150D5000DB0612 /* Elevator.xcdatamodeld in Sources */,
 				B70160B7207AA9C300E9D838 /* MenuCell.swift in Sources */,
 				B77B0FF120150D5000DB0612 /* SplashViewController.swift in Sources */,
@@ -657,6 +682,7 @@
 				B7A9D503203969B200C80DCF /* ElevatorState.swift in Sources */,
 				B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */,
 				B75B469520A87A9B00827CBE /* ScanViewController.swift in Sources */,
+				B7B0A91920BA3D76008F9EAC /* ElevatorAction.swift in Sources */,
 				B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */,
 				B70087182016696300A8A1EB /* Constants.swift in Sources */,
 				B7A9D509203969C100C80DCF /* Order.swift in Sources */,
@@ -667,11 +693,13 @@
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
 				B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */,
 				B6677913477C34FB5CA7FDC3 /* AbstractMessage.swift in Sources */,
+				B7B0A91620BA3B69008F9EAC /* ElevatorsViewController.swift in Sources */,
 				B75B469220A86ECA00827CBE /* GroupAction.swift in Sources */,
 				B75B468D20A74A8800827CBE /* GroupEntity.swift in Sources */,
 				B7A9D4FC203967D600C80DCF /* RelayOrderResponse.swift in Sources */,
 				B66774795DADC38692FC605E /* Echo.swift in Sources */,
 				B7A9D4F1203966E300C80DCF /* FetchInfo.swift in Sources */,
+				B7B0A91B20BA3EBB008F9EAC /* ElevatorCell.swift in Sources */,
 				B667738CF0CDFD4637A8C07C /* MessageUtils.swift in Sources */,
 				B7A9D4FA203967CA00C80DCF /* GroupInfo.swift in Sources */,
 				B7A9D505203969B800C80DCF /* Fetch.swift in Sources */,

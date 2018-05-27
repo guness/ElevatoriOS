@@ -79,7 +79,7 @@ class MenuViewController: SGViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         if (groups?.count ?? 0 == indexPath.section){
-            toGroupList(action: GroupAction.Delete)
+            toGroupPicker(action: GroupAction.Delete)
         } else {
             //TODO:
         }
