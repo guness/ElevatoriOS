@@ -13,20 +13,15 @@ import RealmSwift
 class PanelViewController: SGViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var notificationToken: NotificationToken? = nil
-    var elevatorEntity:ElevatorEntity?=nil
+    var elevatorEntity: ElevatorEntity?=nil
 
     @IBOutlet weak var sevenSegment: UILabel!
     @IBOutlet weak var listView: UICollectionView!
     @IBOutlet weak var errorLabel: UILabel!
     
-    let device = "UUID-0000-000-001"
+    let device = "UUID-DEMO-000-001"
     let group = "f5bbd000-d9c0-4bd5-b4c6-06d3ca605536"
 
-    let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
-    let mainScheduler = MainScheduler.instance
-    let compositeDisposable = CompositeDisposable()
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +46,8 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        super.viewDidAppear(animated)
+        
         _ = compositeDisposable.insert(
                 ElevatorRepository.sharedInstance
                         .getStateObservable()
@@ -73,7 +69,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        compositeDisposable.dispose()
+        super.viewDidDisappear(animated)
         NetworkService.sharedInstance.sendStopListenDevice(device: device)
     }
     
@@ -88,11 +84,6 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
         return cell
     }
     
-    
-    @IBAction func onDoneClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-
     @IBAction func onB1Clicked(_ sender: Any) {
     }
     

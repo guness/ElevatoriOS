@@ -12,5 +12,8 @@ class Group: Codable {
     var id: Int64 = 0
     var uuid: String = ""
     var description: String?
+    var address: String? = nil
+    var latitude: Double? = nil
+    var longitude: Double? = nil
     var elevators: [Elevator] = []
 }

@@ -11,8 +11,6 @@ import RxSwift
 
 class SplashViewController: SGViewController {
 
-    let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
-    let mainScheduler = MainScheduler.instance
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {

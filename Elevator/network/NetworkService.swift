@@ -8,6 +8,7 @@
 
 import SocketRocket
 import Foundation
+import RealmSwift
 import FirebaseInstanceID
 import os.log
 
@@ -57,9 +58,20 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         let data = "TestString".data(using: .utf8)
         ws.sendPing(data)
 
-        let fetch = Fetch(type: Fetch.TYPE_GROUP)
-        fetch.id = 1
-        sendMessage(message: FetchInfo(fetch: fetch))
+        let realm = try! Realm()
+        
+        let groups = realm.objects(GroupEntity.self)
+        if(groups.count == 0){
+            let fetch = Fetch(type: Fetch.TYPE_UUID)
+            fetch.uuid = Constants.DEMO_GROUP_UUID
+            sendMessage(message: FetchInfo(fetch: fetch))
+        } else {
+            for group in groups {
+                let fetch = Fetch(type: Fetch.TYPE_UUID)
+                fetch.uuid = group.uuid
+                sendMessage(message: FetchInfo(fetch: fetch))
+            }
+        }
     }
 
     func webSocket(_ ws: SRWebSocket, didReceiveMessageWith string: String) {

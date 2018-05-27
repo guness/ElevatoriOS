@@ -25,12 +25,17 @@ class ElevatorRepository: NSObject {
     public func onGroupInfoArrived(_ info: GroupInfo) {
         let realm = try! Realm()
 
-        info.group?.elevators.forEach({ elevator in
+        if let group = info.group {
             try! realm.write {
-                let entity = ElevatorEntity(elevator: elevator)
+                if let realmGroup = realm.objects(GroupEntity.self).filter("uuid = %@", group.uuid).first{
+                    realm.delete(realmGroup.elevators)
+                }
+                
+                let entity = GroupEntity(group: group)
                 realm.add(entity, update: true)
             }
-        })
+        }
+        
         groupInfoObservable.onNext(info)
     }
 
