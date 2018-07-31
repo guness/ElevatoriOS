@@ -11,5 +11,5 @@ import UIKit
 
 class ButtonCell: UICollectionViewCell {
     
-    @IBOutlet weak var buttonView: UIButton!
+    @IBOutlet weak var buttonView: PanelButton!
 }

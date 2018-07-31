@@ -144,6 +144,13 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         fetch.uuid = uuid
         sendMessage(message: FetchInfo(fetch: fetch))
     }
+    
+    func sendRelayOrder(device: String, floor: Int) {
+        let order = Order()
+        order.floor = floor
+        order.device = device
+        sendMessage(message: RelayOrder(order: order))
+    }
 
     func sendListenDevice(device: String) {
         sendMessage(message: ListenDevice(device: device))

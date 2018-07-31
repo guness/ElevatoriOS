@@ -23,7 +23,7 @@ struct kLog {
 
 struct Constants {
     static let HOST = "ws://elevator.onintech.com/mobile"
-    static let DEMO_GROUP_UUID = "f5bbd000-2060-3077-sgdg-06d3ca605536"
+    static let DEMO_GROUP_UUID = "f5bbd000-2060-3077-abcd-06d3ca605536"
 }
 
 extension Fetch {

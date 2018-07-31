@@ -13,7 +13,7 @@ import RealmSwift
 class PanelViewController: SGViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var notificationToken: NotificationToken? = nil
-    var elevatorEntity: ElevatorEntity?=nil
+    var elevatorEntity: ElevatorEntity? = nil
 
     @IBOutlet weak var sevenSegment: UILabel!
     @IBOutlet weak var listView: UICollectionView!
@@ -44,7 +44,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
             }
         }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -73,6 +73,10 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
         NetworkService.sharedInstance.sendStopListenDevice(device: device)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        NetworkService.sharedInstance.sendRelayOrder(device: device, floor: positionToFloor(position: indexPath.item))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return elevatorEntity?.floorCount ?? 0
     }
@@ -80,10 +84,15 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "ButtonCell";
         let cell:ButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ButtonCell
-        cell.buttonView.setTitle("\(indexPath.item + (elevatorEntity?.minFloor ?? 0))", for: UIControlState.normal)
+        let floor = positionToFloor(position: indexPath.item)
+        cell.buttonView.setTitle("\(floor)", for: UIControlState.normal)
+        cell.buttonView.floor = floor
         return cell
     }
     
+    @IBAction func onFloorSelected(_ sender: PanelButton) {
+        NetworkService.sharedInstance.sendRelayOrder(device: device, floor: sender.floor)
+    }
     @IBAction func onB1Clicked(_ sender: Any) {
     }
     
@@ -101,6 +110,13 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func positionToFloor(position: Int)-> Int {
+        return position + (elevatorEntity?.minFloor ?? 0)
+    }
+    
+    func floorToPosition(floor: Int)-> Int {
+        return floor - (elevatorEntity?.minFloor ?? 0)
     }
 }
 
