@@ -19,7 +19,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var listView: UICollectionView!
     @IBOutlet weak var errorLabel: UILabel!
     
-    let device = "UUID-DEMO-000-001"
+    let device = "UUID-0000-000-001"
     let group = "f5bbd000-d9c0-4bd5-b4c6-06d3ca605536"
 
     override func viewDidLoad() {

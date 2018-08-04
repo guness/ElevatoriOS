@@ -26,14 +26,8 @@ class NetworkService: NSObject, SRWebSocketDelegate {
     public func connect(_ token: String?) {
         if webSocket == nil {
             var request = URLRequest(url: URL(string: Constants.HOST)!)
-
-            var username: String
-            if let identifierForVendor = UIDevice.current.identifierForVendor {
-                username = identifierForVendor.uuidString
-            } else {
-                username = UUID().uuidString
-                os_log("%@: connect using generated UUID %@", String(describing: type(of: self)), username)
-            }
+            var username = PreferencesRepository.sharedInstance.getUUID()
+            os_log("%@: connect using generated UUID %@", String(describing: type(of: self)), username)
             request.addValue(NetworkUtils.basicAuth(username: username, password: token), forHTTPHeaderField: "Authorization")
             webSocket = SRWebSocket(urlRequest: request)
             webSocket.delegate = self
@@ -42,7 +36,7 @@ class NetworkService: NSObject, SRWebSocketDelegate {
     }
 
     public func sendMessage<T>(message: T) where T: AbstractMessage {
-        let json = try! String(data: JSONEncoder().encode(message), encoding: .utf8)!
+        let json = try! String(data:JSONEncoder().encode(message), encoding: .utf8)!
 
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: sendMessage %@", String(describing: type(of: self)), json)
@@ -59,9 +53,9 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         ws.sendPing(data)
 
         let realm = try! Realm()
-        
+
         let groups = realm.objects(GroupEntity.self)
-        if(groups.count == 0){
+        if (groups.count == 0) {
             let fetch = Fetch(type: Fetch.TYPE_UUID)
             fetch.uuid = Constants.DEMO_GROUP_UUID
             sendMessage(message: FetchInfo(fetch: fetch))
@@ -144,7 +138,7 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         fetch.uuid = uuid
         sendMessage(message: FetchInfo(fetch: fetch))
     }
-    
+
     func sendRelayOrder(device: String, floor: Int) {
         let order = Order()
         order.floor = floor

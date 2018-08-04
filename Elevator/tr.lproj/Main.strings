@@ -17,9 +17,6 @@
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "Zfm-CD-3Jg"; */
 "Zfm-CD-3Jg.title" = "Title";
 
-/* Class = "UILabel"; text = "Onin Electronics"; ObjectID = "dp1-Rk-uV5"; */
-"dp1-Rk-uV5.text" = "Onin Elektronik";
-
 /* Class = "UIButton"; normalTitle = "+"; ObjectID = "qw9-hx-0EB"; */
 "qw9-hx-0EB.normalTitle" = "+";
 

@@ -34,6 +34,12 @@
 		B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77B0FFA20150D5000DB0612 /* LaunchScreen.storyboard */; };
 		B77B100720150D5100DB0612 /* ElevatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B100620150D5100DB0612 /* ElevatorTests.swift */; };
 		B77B101220150D5100DB0612 /* ElevatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B101120150D5100DB0612 /* ElevatorUITests.swift */; };
+		B791CEF5211648D4004174BE /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEF4211648D4004174BE /* SettingsEntity.swift */; };
+		B791CEF721164A3C004174BE /* FavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEF621164A3C004174BE /* FavoriteEntity.swift */; };
+		B791CEF921164B8E004174BE /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEF821164B8E004174BE /* OrderEntity.swift */; };
+		B791CEFB21164BE8004174BE /* PanelPrefsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEFA21164BE8004174BE /* PanelPrefsEntity.swift */; };
+		B791CEFD21164D00004174BE /* KeyDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEFC21164D00004174BE /* KeyDefs.swift */; };
+		B791CEFF211650B3004174BE /* PreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791CEFE211650B3004174BE /* PreferencesRepository.swift */; };
 		B7A9D4F1203966E300C80DCF /* FetchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F0203966E300C80DCF /* FetchInfo.swift */; };
 		B7A9D4F32039677500C80DCF /* ListenDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F22039677500C80DCF /* ListenDevice.swift */; };
 		B7A9D4F5203967A500C80DCF /* RelayOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A9D4F4203967A500C80DCF /* RelayOrder.swift */; };
@@ -114,6 +120,12 @@
 		B77B101120150D5100DB0612 /* ElevatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorUITests.swift; sourceTree = "<group>"; };
 		B77B101320150D5100DB0612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B78C8C59210C88FA0003534D /* Elevator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Elevator.entitlements; sourceTree = "<group>"; };
+		B791CEF4211648D4004174BE /* SettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		B791CEF621164A3C004174BE /* FavoriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEntity.swift; sourceTree = "<group>"; };
+		B791CEF821164B8E004174BE /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
+		B791CEFA21164BE8004174BE /* PanelPrefsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelPrefsEntity.swift; sourceTree = "<group>"; };
+		B791CEFC21164D00004174BE /* KeyDefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDefs.swift; sourceTree = "<group>"; };
+		B791CEFE211650B3004174BE /* PreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesRepository.swift; sourceTree = "<group>"; };
 		B7A9D4F0203966E300C80DCF /* FetchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchInfo.swift; sourceTree = "<group>"; };
 		B7A9D4F22039677500C80DCF /* ListenDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenDevice.swift; sourceTree = "<group>"; };
 		B7A9D4F4203967A500C80DCF /* RelayOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayOrder.swift; sourceTree = "<group>"; };
@@ -245,6 +257,12 @@
 				B7A9D50A20399C1100C80DCF /* ElevatorRepository.swift */,
 				B7A9D50C2039B70500C80DCF /* ElevatorEntity.swift */,
 				B75B468C20A74A8800827CBE /* GroupEntity.swift */,
+				B791CEF4211648D4004174BE /* SettingsEntity.swift */,
+				B791CEF621164A3C004174BE /* FavoriteEntity.swift */,
+				B791CEF821164B8E004174BE /* OrderEntity.swift */,
+				B791CEFA21164BE8004174BE /* PanelPrefsEntity.swift */,
+				B791CEFC21164D00004174BE /* KeyDefs.swift */,
+				B791CEFE211650B3004174BE /* PreferencesRepository.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -502,8 +520,14 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
 							};
 						};
 					};
@@ -689,17 +713,22 @@
 				B7A9D4FE203967E000C80DCF /* UpdateState.swift in Sources */,
 				B7A9D501203969AC00C80DCF /* Elevator.swift in Sources */,
 				B7A9D4F5203967A500C80DCF /* RelayOrder.swift in Sources */,
+				B791CEFF211650B3004174BE /* PreferencesRepository.swift in Sources */,
 				B7A9D503203969B200C80DCF /* ElevatorState.swift in Sources */,
 				B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */,
 				B75B469520A87A9B00827CBE /* ScanViewController.swift in Sources */,
 				B7B0A91920BA3D76008F9EAC /* ElevatorAction.swift in Sources */,
+				B791CEFB21164BE8004174BE /* PanelPrefsEntity.swift in Sources */,
 				B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */,
 				B70087182016696300A8A1EB /* Constants.swift in Sources */,
 				B7A9D509203969C100C80DCF /* Order.swift in Sources */,
+				B791CEFD21164D00004174BE /* KeyDefs.swift in Sources */,
 				B7A9D4F7203967B300C80DCF /* StopListening.swift in Sources */,
 				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
+				B791CEF921164B8E004174BE /* OrderEntity.swift in Sources */,
 				B7A9D50D2039B70500C80DCF /* ElevatorEntity.swift in Sources */,
 				B75B6193211109750088939E /* PanelButton.swift in Sources */,
+				B791CEF5211648D4004174BE /* SettingsEntity.swift in Sources */,
 				B7A9D4F32039677500C80DCF /* ListenDevice.swift in Sources */,
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
 				B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */,
@@ -712,6 +741,7 @@
 				B7A9D4F1203966E300C80DCF /* FetchInfo.swift in Sources */,
 				B7B0A91B20BA3EBB008F9EAC /* ElevatorCell.swift in Sources */,
 				B667738CF0CDFD4637A8C07C /* MessageUtils.swift in Sources */,
+				B791CEF721164A3C004174BE /* FavoriteEntity.swift in Sources */,
 				B7A9D4FA203967CA00C80DCF /* GroupInfo.swift in Sources */,
 				B7A9D505203969B800C80DCF /* Fetch.swift in Sources */,
 				B7BF63A1207A6951001CE9CE /* ButtonCell.swift in Sources */,
