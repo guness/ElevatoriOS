@@ -63,9 +63,10 @@ open class SGViewController: UIViewController {
         }
     }
 
-    func toPanel() {
+    func toPanel(action:PanelAction) {
         if !(self is PanelViewController) {
             self.modalTransitionStyle = .crossDissolve
+            intents["toPanel"] = action
             performSegue(withIdentifier: "toPanel", sender: self)
         }
     }
@@ -109,6 +110,10 @@ open class SGViewController: UIViewController {
                 case "toElevatorPicker":
                     let viewController = segue.destination as! ElevatorsViewController
                     viewController.intent = intent as? ElevatorAction
+
+                case "toPanel":
+                    let viewController = segue.destination as! PanelViewController
+                    viewController.intent = intent as? PanelAction
                     
                 default:
                     print("unhandled case: "+identifier)

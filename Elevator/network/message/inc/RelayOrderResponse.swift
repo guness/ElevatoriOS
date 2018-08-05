@@ -12,6 +12,6 @@ class RelayOrderResponse: AbstractMessage {
     let _type = "RelayOrderResponse"
     let version = 2
 
-    let order: Order? = nil
-    let success: Bool = false
+    var order: Order? = nil
+    var success: Bool = false
 }

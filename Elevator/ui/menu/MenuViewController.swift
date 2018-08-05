@@ -81,7 +81,9 @@ class MenuViewController: SGViewController, UITableViewDataSource, UITableViewDe
         if (groups?.count ?? 0 == indexPath.section){
             toGroupPicker(action: GroupAction.Delete)
         } else {
-            //TODO:
+            if let elevator = self.groups?[indexPath.section].elevators[indexPath.row]{
+                toPanel(action: PanelAction(device: elevator.device))
+            }
         }
     }
 

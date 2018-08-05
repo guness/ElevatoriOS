@@ -59,6 +59,7 @@
 		B7B0A91920BA3D76008F9EAC /* ElevatorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91820BA3D76008F9EAC /* ElevatorAction.swift */; };
 		B7B0A91B20BA3EBB008F9EAC /* ElevatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */; };
 		B7BF63A1207A6951001CE9CE /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF63A0207A6951001CE9CE /* ButtonCell.swift */; };
+		B7E24BFA2117616D00BC5DCC /* PanelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E24BF92117616D00BC5DCC /* PanelAction.swift */; };
 		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -145,6 +146,7 @@
 		B7B0A91820BA3D76008F9EAC /* ElevatorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorAction.swift; sourceTree = "<group>"; };
 		B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorCell.swift; sourceTree = "<group>"; };
 		B7BF63A0207A6951001CE9CE /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		B7E24BF92117616D00BC5DCC /* PanelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAction.swift; sourceTree = "<group>"; };
 		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB90845DD8358BA4821DCF /* Pods-ElevatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B7008713201660EB00A8A1EB /* PanelViewController.swift */,
 				B7BF63A0207A6951001CE9CE /* ButtonCell.swift */,
 				B75B6192211109750088939E /* PanelButton.swift */,
+				B7E24BF92117616D00BC5DCC /* PanelAction.swift */,
 			);
 			path = panel;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				B75B6193211109750088939E /* PanelButton.swift in Sources */,
 				B791CEF5211648D4004174BE /* SettingsEntity.swift in Sources */,
 				B7A9D4F32039677500C80DCF /* ListenDevice.swift in Sources */,
+				B7E24BFA2117616D00BC5DCC /* PanelAction.swift in Sources */,
 				B7008714201660EB00A8A1EB /* PanelViewController.swift in Sources */,
 				B70A2A352017AED00063A5C3 /* MenuViewController.swift in Sources */,
 				B6677913477C34FB5CA7FDC3 /* AbstractMessage.swift in Sources */,

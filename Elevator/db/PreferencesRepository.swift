@@ -30,6 +30,21 @@ class PreferencesRepository: NSObject {
         }
     }
 
+    func insertOrder(device: String, floor: Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(OrderEntity(device, floor), update: true)
+        }
+    }
+
+    func clearOrder() {
+        let realm = try! Realm()
+        let order = realm.objects(OrderEntity.self)
+        try! realm.write {
+            realm.delete(order)
+        }
+    }
+
     static let sharedInstance: PreferencesRepository = {
         let instance = PreferencesRepository()
         // setup code

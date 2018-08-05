@@ -9,5 +9,6 @@
 import Foundation
 
 enum ElevatorAction {
-    case Pick
+    case PickElevator
+    case PickFloor
 }

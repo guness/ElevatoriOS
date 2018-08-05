@@ -23,6 +23,4 @@ class ElevatorState: Codable {
      * PASS or STOP
      */
     var action: String?
-
-
 }

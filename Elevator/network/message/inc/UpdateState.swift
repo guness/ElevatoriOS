@@ -12,5 +12,5 @@ class UpdateState: AbstractMessage {
     let _type = "UpdateState"
     let version = 2
 
-    let state: ElevatorState? = nil
+    var state: ElevatorState? = nil
 }
