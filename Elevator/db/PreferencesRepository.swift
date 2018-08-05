@@ -45,6 +45,11 @@ class PreferencesRepository: NSObject {
         }
     }
 
+    func getOrder() -> OrderEntity? {
+        let realm = try! Realm()
+        return realm.objects(OrderEntity.self).first
+    }
+
     static let sharedInstance: PreferencesRepository = {
         let instance = PreferencesRepository()
         // setup code

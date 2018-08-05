@@ -149,6 +149,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+         print("Oh Yeah")
+        print(userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    func application(_ application: UIApplication,                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Oh no! Failed to register for remote notifications with error \(error)")
+    }
     // MARK: - Core Data Saving support
 
     func saveContext() {

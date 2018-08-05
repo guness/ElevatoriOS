@@ -56,6 +56,14 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                             .observeOn(mainScheduler)
                             .subscribe { it in
                                 if let element = it.element {
+
+                                    if let order = PreferencesRepository.sharedInstance.getOrder() {
+                                        if order.device == element.device && order.floor == element.floor && element.action == "STOP" {
+                                            PreferencesRepository.sharedInstance.clearOrder()
+                                            SoundManager.sharedInstance.playDing()
+                                        }
+                                    }
+                                    
                                     if element.online == true {
                                         self.sevenSegment.text = String(element.floor ?? 0)
                                     } else {
@@ -85,7 +93,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                             .delay(RxTimeInterval(2), scheduler: backgroundScheduler)
                             .subscribeOn(backgroundScheduler)
                             .observeOn(mainScheduler)
-                            .subscribe {it in
+                            .subscribe { it in
                                 self.errorLabel.text = it.element!
                             })
 

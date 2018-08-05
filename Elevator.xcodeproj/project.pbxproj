@@ -60,6 +60,8 @@
 		B7B0A91B20BA3EBB008F9EAC /* ElevatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */; };
 		B7BF63A1207A6951001CE9CE /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF63A0207A6951001CE9CE /* ButtonCell.swift */; };
 		B7E24BFA2117616D00BC5DCC /* PanelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E24BF92117616D00BC5DCC /* PanelAction.swift */; };
+		B7E24BFC2117B18500BC5DCC /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E24BFB2117B18500BC5DCC /* SoundManager.swift */; };
+		B7E24BFE2117B6D900BC5DCC /* elevator_ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7E24BFD2117B6D900BC5DCC /* elevator_ding.mp3 */; };
 		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -147,6 +149,8 @@
 		B7B0A91A20BA3EBB008F9EAC /* ElevatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorCell.swift; sourceTree = "<group>"; };
 		B7BF63A0207A6951001CE9CE /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		B7E24BF92117616D00BC5DCC /* PanelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAction.swift; sourceTree = "<group>"; };
+		B7E24BFB2117B18500BC5DCC /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		B7E24BFD2117B6D900BC5DCC /* elevator_ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator_ding.mp3; sourceTree = "<group>"; };
 		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB90845DD8358BA4821DCF /* Pods-ElevatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				B7180870201BED50002A2A2C /* NetworkUtils.swift */,
+				B7E24BFB2117B18500BC5DCC /* SoundManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 		B77B0FED20150D5000DB0612 /* Elevator */ = {
 			isa = PBXGroup;
 			children = (
+				B7E24BFD2117B6D900BC5DCC /* elevator_ding.mp3 */,
 				B78C8C59210C88FA0003534D /* Elevator.entitlements */,
 				B77B0FEE20150D5000DB0612 /* AppDelegate.swift */,
 				B70087172016696300A8A1EB /* Constants.swift */,
@@ -571,6 +577,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E24BFE2117B6D900BC5DCC /* elevator_ding.mp3 in Resources */,
 				B77B0FFC20150D5000DB0612 /* LaunchScreen.storyboard in Resources */,
 				B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */,
 				B7180873201C63E7002A2A2C /* GoogleService-Info.plist in Resources */,
@@ -717,6 +724,7 @@
 				B7A9D501203969AC00C80DCF /* Elevator.swift in Sources */,
 				B7A9D4F5203967A500C80DCF /* RelayOrder.swift in Sources */,
 				B791CEFF211650B3004174BE /* PreferencesRepository.swift in Sources */,
+				B7E24BFC2117B18500BC5DCC /* SoundManager.swift in Sources */,
 				B7A9D503203969B200C80DCF /* ElevatorState.swift in Sources */,
 				B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */,
 				B75B469520A87A9B00827CBE /* ScanViewController.swift in Sources */,
