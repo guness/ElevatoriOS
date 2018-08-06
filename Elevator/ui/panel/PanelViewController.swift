@@ -14,7 +14,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
 
     var elevatorEntity: ElevatorEntity? = nil
     var intent: PanelAction? = nil
-    var favorites: Results<FavoriteEntity>? = nil
+    var prefs: Results<PanelPrefsEntity>? = nil
     var buttonClicked: String? = nil
     
     @IBOutlet weak var sevenSegment: UILabel!
@@ -25,7 +25,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
         super.viewDidLoad()
 
         let realm = try! Realm()
-        favorites = realm.objects(FavoriteEntity.self)
+        prefs = realm.objects(PanelPrefsEntity.self).filter("device = %@", intent!.device)
         elevatorEntity = realm.objects(ElevatorEntity.self).filter("device = %@", intent!.device).first
         navigationItem.title = elevatorEntity?.elvDescription
     }
@@ -137,7 +137,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     }
     
     func onFavoriteClicked(_ key: String) {
-        if let favorite = favorites?.filter("key = %@ AND device = %@", key, intent!.device).first {
+        if let favorite = prefs?.filter("key = %@", key).first {
             NetworkService.sharedInstance.sendRelayOrder(device: favorite.device, floor: favorite.floor)
         } else {
             buttonClicked = key
@@ -149,15 +149,13 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
         super.prepare(for: segue, sender: sender)
         if let elevatorPicker = segue.destination as? FloorsViewController {
             elevatorPicker.callback = { entity, floor in
-                let favorite = FavoriteEntity()
-                favorite.key = self.buttonClicked!
-                favorite.favDescription = entity.description
-                favorite.device = entity.device
-                favorite.groupId = entity.groupId
-                favorite.type = TypeDef.TYPE_FLOOR
-                favorite.floor = floor
+                let prefs = PanelPrefsEntity()
+                prefs.key = self.buttonClicked!
+                prefs.device = entity.device
+                prefs.groupId = entity.groupId
+                prefs.floor = floor
                 
-                PreferencesRepository.sharedInstance.insert(favorite: favorite)
+                PreferencesRepository.sharedInstance.insert(entity: prefs)
             }
         }
     }

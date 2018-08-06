@@ -36,6 +36,13 @@ class PreferencesRepository: NSObject {
             realm.add(favorite, update: true)
         }
     }
+    
+    func insert(entity: PanelPrefsEntity) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(entity, update: true)
+        }
+    }
 
     func insertOrder(device: String, floor: Int) {
         let realm = try! Realm()
