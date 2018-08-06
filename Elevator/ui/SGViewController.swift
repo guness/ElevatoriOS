@@ -14,7 +14,7 @@ open class SGViewController: UIViewController {
     
     open let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     open let mainScheduler = MainScheduler.instance
-    open let compositeDisposable = CompositeDisposable()
+    open var compositeDisposable = CompositeDisposable()
     
     open var intents = [String : Any]()
     
@@ -50,6 +50,7 @@ open class SGViewController: UIViewController {
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         compositeDisposable.dispose()
+        compositeDisposable = CompositeDisposable()
         if (kLog.TraceViews && kLog.Trace) {
             os_log("%@: viewDidDisappear", String(describing: type(of: self)))
         }
