@@ -12,35 +12,22 @@ import RealmSwift
 
 class PanelViewController: SGViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var notificationToken: NotificationToken? = nil
     var elevatorEntity: ElevatorEntity? = nil
     var intent: PanelAction? = nil
-
+    var favorites: Results<FavoriteEntity>? = nil
+    var buttonClicked: String? = nil
+    
     @IBOutlet weak var sevenSegment: UILabel!
     @IBOutlet weak var listView: UICollectionView!
     @IBOutlet weak var errorLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let realm = try! Realm()
+        favorites = realm.objects(FavoriteEntity.self)
         elevatorEntity = realm.objects(ElevatorEntity.self).filter("device = %@", intent!.device).first
-
-        // Observe Results Notifications
-        notificationToken = elevatorEntity?.observe { change in
-            switch change {
-            case .change(let properties):
-                for property in properties {
-                    if property.name == "steps" && property.newValue as! Int > 1000 {
-                        print("Congratulations, you've exceeded 1000 steps.")
-                    }
-                }
-            case .error(let error):
-                print("An error occurred: \(error)")
-            case .deleted:
-                print("The object was deleted.")
-            }
-        }
+        navigationItem.title = elevatorEntity?.elvDescription
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -134,19 +121,45 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     }
 
     @IBAction func onB1Clicked(_ sender: Any) {
+        onFavoriteClicked(KeyDef.B1)
     }
 
     @IBAction func onB2Clicked(_ sender: Any) {
+        onFavoriteClicked(KeyDef.B2)
     }
 
     @IBAction func onB3Clicked(_ sender: Any) {
+        onFavoriteClicked(KeyDef.B3)
     }
 
     @IBAction func onB4Clicked(_ sender: Any) {
+        onFavoriteClicked(KeyDef.B4)
+    }
+    
+    func onFavoriteClicked(_ key: String) {
+        if let favorite = favorites?.filter("key = %@ AND device = %@", key, intent!.device).first {
+            NetworkService.sharedInstance.sendRelayOrder(device: favorite.device, floor: favorite.floor)
+        } else {
+            buttonClicked = key
+            toFloorPicker(action: elevatorEntity!)
+        }
     }
 
-    deinit {
-        notificationToken?.invalidate()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let elevatorPicker = segue.destination as? FloorsViewController {
+            elevatorPicker.callback = { entity, floor in
+                let favorite = FavoriteEntity()
+                favorite.key = self.buttonClicked!
+                favorite.favDescription = entity.description
+                favorite.device = entity.device
+                favorite.groupId = entity.groupId
+                favorite.type = TypeDef.TYPE_FLOOR
+                favorite.floor = floor
+                
+                PreferencesRepository.sharedInstance.insert(favorite: favorite)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

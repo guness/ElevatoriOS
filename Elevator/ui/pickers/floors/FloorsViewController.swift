@@ -17,19 +17,10 @@ class FloorsViewController: SGViewController, UICollectionViewDataSource, UIColl
     var callback : ((ElevatorEntity, Int) -> Void)?
     
     @IBOutlet weak var listView: UITableView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let realm = try! Realm()
-       
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        navigationItem.title = intent?.elvDescription
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,7 +39,11 @@ class FloorsViewController: SGViewController, UICollectionViewDataSource, UIColl
     @IBAction func onFloorSelected(_ sender: PanelButton) {
         if let intent = intent {
             callback?(intent, sender.floor)
-            navigationController?.popViewController(animated: true)
+            if let navigationController = navigationController {
+                navigationController.popViewController(animated: true)
+            } else {
+                dismiss(animated: true)
+            }
         }
     }
     

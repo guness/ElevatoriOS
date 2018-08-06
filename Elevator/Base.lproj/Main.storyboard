@@ -109,12 +109,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="GgF-yG-wQW">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="7p5-oy-j1C">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="7p5-oy-j1C">
                                             <connections>
                                                 <action selector="onDoneClicked:" destination="J63-9z-1dW" id="jKW-pb-upK"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="CAo-sx-H1p">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CAo-sx-H1p">
                                             <connections>
                                                 <segue destination="vzO-zc-Xca" kind="showDetail" id="fBU-wS-Vsn"/>
                                             </connections>
@@ -568,7 +568,7 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.29724957191780821" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.2988548801369863" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="Zfm-CD-3Jg">
+                                    <navigationItem id="Zfm-CD-3Jg">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="O3C-rT-ol7">
                                             <connections>
                                                 <action selector="onDoneClicked:" destination="Cs2-a3-eFw" id="Wye-kp-urv"/>
@@ -684,7 +684,9 @@
                     <connections>
                         <outlet property="errorLabel" destination="WI5-kk-JpV" id="PpF-j0-Kh2"/>
                         <outlet property="listView" destination="ayA-Qp-78F" id="iTi-rc-Hfo"/>
+                        <outlet property="navigationItem" destination="Zfm-CD-3Jg" id="o4x-fC-q0K"/>
                         <outlet property="sevenSegment" destination="shk-hz-tx6" id="CR9-75-yFR"/>
+                        <segue destination="icS-Me-Rrn" kind="show" identifier="toFloorPicker" id="T7L-eg-HC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRC-dj-1MT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -709,7 +711,7 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.29724957190000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.2988548801" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="DXu-mH-QY2">
+                                    <navigationItem id="DXu-mH-QY2">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="gwo-dq-iGS">
                                             <connections>
                                                 <action selector="onDoneClicked:" destination="icS-Me-Rrn" id="OSZ-io-34u"/>
@@ -776,11 +778,12 @@
                     </view>
                     <connections>
                         <outlet property="listView" destination="O5c-U9-IeU" id="Bcy-Yb-205"/>
+                        <outlet property="navigationItem" destination="DXu-mH-QY2" id="MQc-Mn-ao9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QG4-c5-5gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6408.75" y="1470.4225352112676"/>
+            <point key="canvasLocation" x="6409" y="1670"/>
         </scene>
     </scenes>
     <resources>
@@ -795,6 +798,7 @@
         <image name="SilverBackground" width="1467" height="2047"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="T7L-eg-HC1"/>
         <segue reference="8dL-Nw-A5T"/>
         <segue reference="L31-qh-WLV"/>
     </inferredMetricsTieBreakers>
