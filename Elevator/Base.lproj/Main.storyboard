@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSb-25-vlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6319" y="721"/>
+            <point key="canvasLocation" x="6409" y="24"/>
         </scene>
         <!--Elevators View Controller-->
         <scene sceneID="ygU-3g-t1c">
@@ -260,11 +260,12 @@
                     </view>
                     <connections>
                         <outlet property="listView" destination="3Q8-rK-Hpv" id="3ah-UG-oAr"/>
+                        <segue destination="icS-Me-Rrn" kind="show" identifier="toFloorPicker" id="Xeo-HM-5cv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxX-we-We7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6319" y="1700"/>
+            <point key="canvasLocation" x="6409" y="721"/>
         </scene>
         <!--Scan View Controller-->
         <scene sceneID="699-rh-Om3">
@@ -689,6 +690,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRC-dj-1MT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2011.875" y="716.19718309859161"/>
+        </scene>
+        <!--Floors View Controller-->
+        <scene sceneID="Qp8-Ix-1Ha">
+            <objects>
+                <viewController id="icS-Me-Rrn" customClass="FloorsViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaK-un-2hb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SilverBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pvj-aj-VbC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0h-K9-W5Z">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.29724957190000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.2988548801" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="DXu-mH-QY2">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="gwo-dq-iGS">
+                                            <connections>
+                                                <action selector="onDoneClicked:" destination="icS-Me-Rrn" id="OSZ-io-34u"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBv-Jq-bWW">
+                                <rect key="frame" x="16" y="122" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MetalBorderBig" translatesAutoresizingMaskIntoConstraints="NO" id="4dB-Ga-E7C">
+                                <rect key="frame" x="39" y="96" width="241" height="424"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-U9-IeU">
+                                <rect key="frame" x="39" y="96" width="242" height="422"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D4O-RI-imf">
+                                    <size key="itemSize" width="74" height="74"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ButtonCell" id="z3x-72-odM" customClass="ButtonCell" customModule="Elevator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC8-xh-d2U" customClass="PanelButton" customModule="Elevator" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="4" width="66" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" backgroundImage="ButtonActive"/>
+                                                    <state key="disabled" backgroundImage="ButtonPassive"/>
+                                                    <state key="selected" backgroundImage="ButtonSelected"/>
+                                                    <state key="highlighted" backgroundImage="ButtonSelected"/>
+                                                    <connections>
+                                                        <action selector="onFloorSelected:" destination="icS-Me-Rrn" eventType="touchUpInside" id="ZD0-Ki-pBW"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="buttonView" destination="NC8-xh-d2U" id="fji-Bu-92r"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="icS-Me-Rrn" id="H9R-bw-S0F"/>
+                                    <outlet property="delegate" destination="icS-Me-Rrn" id="Wuj-Rh-PCm"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UUi-Gs-zDa"/>
+                    </view>
+                    <connections>
+                        <outlet property="listView" destination="O5c-U9-IeU" id="Bcy-Yb-205"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QG4-c5-5gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6408.75" y="1470.4225352112676"/>
         </scene>
     </scenes>
     <resources>

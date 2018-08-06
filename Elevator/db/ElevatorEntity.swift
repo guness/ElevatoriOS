@@ -12,6 +12,7 @@ import Foundation
 class ElevatorEntity: Object {
     @objc dynamic var id: Int64 = 0
     @objc dynamic var device: String = ""
+    @objc dynamic var groupId: Int64 = 0
     @objc dynamic var minFloor: Int = 0
     @objc dynamic var floorCount: Int = 0
     @objc dynamic var address: String? = nil
@@ -19,10 +20,11 @@ class ElevatorEntity: Object {
     @objc dynamic var latitude: Float = 0
     @objc dynamic var longitude: Float = 0
 
-    convenience init(elevator: Elevator) {
+    convenience init(_ elevator: Elevator, _ groupId:Int64) {
         self.init()
         self.id = elevator.id
         self.device = elevator.device
+        self.groupId = groupId
         self.minFloor = elevator.min_floor
         self.floorCount = elevator.floor_count
         self.address = elevator.address

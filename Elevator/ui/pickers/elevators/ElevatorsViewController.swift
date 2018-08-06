@@ -16,6 +16,7 @@ class ElevatorsViewController: SGViewController, UITableViewDataSource, UITableV
     var notificationToken: NotificationToken? = nil
     var groups: Results<GroupEntity>? = nil
     var intent: ElevatorAction? = nil
+    var callback : ((ElevatorEntity, Int?) -> Void)?
 
     @IBOutlet weak var listView: UITableView!
 
@@ -76,6 +77,21 @@ class ElevatorsViewController: SGViewController, UITableViewDataSource, UITableV
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        //TODO:
+        let elevator = self.groups?[indexPath.section].elevators[indexPath.row]
+        if intent == ElevatorAction.PickElevator {
+            callback?(elevator!, nil)
+            navigationController?.popViewController(animated: true)
+        } else if intent == ElevatorAction.PickFloor {
+            toFloorPicker(action:elevator!)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let floorPicker = segue.destination as? FloorsViewController {
+            floorPicker.callback = { entity, floor in
+                self.callback?(entity, floor)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }

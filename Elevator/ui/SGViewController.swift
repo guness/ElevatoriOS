@@ -87,6 +87,14 @@ open class SGViewController: UIViewController {
         }
     }
     
+    func toFloorPicker(action:ElevatorEntity) {
+        if !(self is FloorsViewController) {
+            self.modalTransitionStyle = .crossDissolve
+            intents["toFloorPicker"] = action
+            performSegue(withIdentifier: "toFloorPicker", sender: self)
+        }
+    }
+    
     func toInfo(uuid:String) {
         if !(self is InfoViewController) {
             self.modalTransitionStyle = .crossDissolve
@@ -114,6 +122,10 @@ open class SGViewController: UIViewController {
                 case "toPanel":
                     let viewController = segue.destination as! PanelViewController
                     viewController.intent = intent as? PanelAction
+                    
+                case "toFloorPicker":
+                    let viewController = segue.destination as! FloorsViewController
+                    viewController.intent = intent as? ElevatorEntity
                     
                 default:
                     print("unhandled case: "+identifier)

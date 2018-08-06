@@ -21,6 +21,7 @@
 		B70A2A3E201819CE0063A5C3 /* Open 24 Display St.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */; };
 		B7180871201BED50002A2A2C /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7180870201BED50002A2A2C /* NetworkUtils.swift */; };
 		B7180873201C63E7002A2A2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7180872201C63E7002A2A2C /* GoogleService-Info.plist */; };
+		B747341C2117C36100C72427 /* FloorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B747341B2117C36100C72427 /* FloorsViewController.swift */; };
 		B75B468D20A74A8800827CBE /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B468C20A74A8800827CBE /* GroupEntity.swift */; };
 		B75B469020A7A6A700827CBE /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B468F20A7A6A700827CBE /* GroupsViewController.swift */; };
 		B75B469220A86ECA00827CBE /* GroupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B469120A86ECA00827CBE /* GroupAction.swift */; };
@@ -103,6 +104,7 @@
 		B70A2A3D201819CE0063A5C3 /* Open 24 Display St.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open 24 Display St.ttf"; sourceTree = "<group>"; };
 		B7180870201BED50002A2A2C /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		B7180872201C63E7002A2A2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B747341B2117C36100C72427 /* FloorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorsViewController.swift; sourceTree = "<group>"; };
 		B75B468C20A74A8800827CBE /* GroupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEntity.swift; sourceTree = "<group>"; };
 		B75B468F20A7A6A700827CBE /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		B75B469120A86ECA00827CBE /* GroupAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAction.swift; sourceTree = "<group>"; };
@@ -326,6 +328,14 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		B747341A2117C34000C72427 /* floors */ = {
+			isa = PBXGroup;
+			children = (
+				B747341B2117C36100C72427 /* FloorsViewController.swift */,
+			);
+			path = floors;
+			sourceTree = "<group>";
+		};
 		B75B468E20A7A68600827CBE /* groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +458,7 @@
 		B7B0A91720BA3BD3008F9EAC /* pickers */ = {
 			isa = PBXGroup;
 			children = (
+				B747341A2117C34000C72427 /* floors */,
 				B75B468E20A7A68600827CBE /* groups */,
 				B7B0A91420BA3B40008F9EAC /* elevators */,
 			);
@@ -756,6 +767,7 @@
 				B791CEF721164A3C004174BE /* FavoriteEntity.swift in Sources */,
 				B7A9D4FA203967CA00C80DCF /* GroupInfo.swift in Sources */,
 				B7A9D505203969B800C80DCF /* Fetch.swift in Sources */,
+				B747341C2117C36100C72427 /* FloorsViewController.swift in Sources */,
 				B7BF63A1207A6951001CE9CE /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

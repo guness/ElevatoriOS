@@ -29,7 +29,7 @@ class GroupEntity: Object {
         self.groupDescription = group.description
         
         for elevator in group.elevators {
-            let entity = ElevatorEntity(elevator: elevator)
+            let entity = ElevatorEntity(elevator, group.id)
             self.elevators.append(entity)
         }
     }
