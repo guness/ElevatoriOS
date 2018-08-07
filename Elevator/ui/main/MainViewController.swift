@@ -12,16 +12,85 @@ import UIKit
 
 class MainViewController: SGViewController {
 
+    var notificationToken: NotificationToken? = nil
     var favorites: Results<FavoriteEntity>? = nil
     var buttonClicked: String? = nil
+
+    @IBOutlet weak var l1label: UILabel!
+    @IBOutlet weak var l2label: UILabel!
+    @IBOutlet weak var l3label: UILabel!
+    @IBOutlet weak var l4label: UILabel!
+    @IBOutlet weak var r1label: UILabel!
+    @IBOutlet weak var r2label: UILabel!
+    @IBOutlet weak var r3label: UILabel!
+    @IBOutlet weak var r4label: UILabel!
+    @IBOutlet weak var r1button: UIButton!
+    @IBOutlet weak var r2button: UIButton!
+    @IBOutlet weak var r3button: UIButton!
+    @IBOutlet weak var r4button: UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
         let realm = try! Realm()
         favorites = realm.objects(FavoriteEntity.self)
+
+        // Observe Results Notifications
+        notificationToken = favorites?.observe { [weak self] (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                self?.reloadButtonLabels()
+            case .update(_, _, _, _):
+                // Query results have changed, so apply them to the UITableView
+                self?.reloadButtonLabels()
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            }
+        }
     }
 
+    func reloadButtonLabels() {
+        l1label.text = "New Elevator"
+        l2label.text = "New Elevator"
+        l3label.text = "New Elevator"
+        l4label.text = "New Elevator"
+
+        r1label.text = "New Floor"
+        r2label.text = "New Floor"
+        r3label.text = "New Floor"
+        r4label.text = "New Floor"
+
+        r1button.setTitle("+", for: .normal)
+        r2button.setTitle("+", for: .normal)
+        r3button.setTitle("+", for: .normal)
+        r4button.setTitle("+", for: .normal)
+        favorites?.forEach { pref in
+            let floor = String(pref.floor)
+            switch pref.key {
+            case KeyDef.L1: l1label.text = pref.favDescription
+            case KeyDef.L2: l2label.text = pref.favDescription
+            case KeyDef.L3: l3label.text = pref.favDescription
+            case KeyDef.L4: l4label.text = pref.favDescription
+            case KeyDef.R1:
+                self.r1label.text = pref.favDescription
+                self.r1button.setTitle(floor, for: .normal)
+            case KeyDef.R2:
+                self.r2label.text = pref.favDescription
+                self.r2button.setTitle(floor, for: .normal)
+            case KeyDef.R3:
+                self.r3label.text = pref.favDescription
+                self.r3button.setTitle(floor, for: .normal)
+            case KeyDef.R4:
+                self.r4label.text = pref.favDescription
+                self.r4button.setTitle(floor, for: .normal)
+            default: return
+            }
+        }
+    }
 
     @IBAction func onL1Clicked(_ sender: Any) {
         onFavoriteClicked(KeyDef.L1)
@@ -41,7 +110,6 @@ class MainViewController: SGViewController {
 
     @IBAction func onR1Clicked(_ sender: Any) {
         onFavoriteClicked(KeyDef.R1)
-        //TODO: toPanel()
     }
 
     @IBAction func onR2Clicked(_ sender: Any) {
@@ -57,7 +125,7 @@ class MainViewController: SGViewController {
     }
 
     func onFavoriteClicked(_ key: String) {
-        let type = try! getType(key: key)
+        let type = getType(key: key)
 
         if let favorite = favorites?.filter("key = %@", key).first {
             if type == TypeDef.TYPE_FLOOR {
@@ -91,7 +159,7 @@ class MainViewController: SGViewController {
             elevatorPicker.callback = { entity, floor in
                 let favorite = FavoriteEntity()
                 favorite.key = self.buttonClicked!
-                favorite.favDescription = entity.description
+                favorite.favDescription = entity.elvDescription
                 favorite.device = entity.device
                 favorite.groupId = entity.groupId
                 if let floor = floor {
@@ -104,6 +172,10 @@ class MainViewController: SGViewController {
                 PreferencesRepository.sharedInstance.insert(favorite: favorite)
             }
         }
+    }
+
+    deinit {
+        notificationToken?.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
