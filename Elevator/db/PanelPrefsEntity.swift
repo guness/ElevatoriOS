@@ -10,7 +10,7 @@ import RealmSwift
 import Foundation
 
 class PanelPrefsEntity: Object {
-    @objc dynamic var id: Int64 = 1
+    @objc dynamic var id: String = NSUUID().uuidString
     /**
     * KeyDef
     */

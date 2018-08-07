@@ -682,6 +682,10 @@
                         <viewLayoutGuide key="safeArea" id="Yfv-3T-xOM"/>
                     </view>
                     <connections>
+                        <outlet property="button1" destination="9um-mJ-eWK" id="kKw-e3-9zU"/>
+                        <outlet property="button2" destination="HYX-Bo-ZuW" id="3zD-5r-MJn"/>
+                        <outlet property="button3" destination="1GB-Q3-SBz" id="yPb-iF-Mu8"/>
+                        <outlet property="button4" destination="qw9-hx-0EB" id="f5Q-RY-yD8"/>
                         <outlet property="errorLabel" destination="WI5-kk-JpV" id="PpF-j0-Kh2"/>
                         <outlet property="listView" destination="ayA-Qp-78F" id="iTi-rc-Hfo"/>
                         <outlet property="navigationItem" destination="Zfm-CD-3Jg" id="o4x-fC-q0K"/>

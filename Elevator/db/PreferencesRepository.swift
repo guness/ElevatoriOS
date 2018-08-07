@@ -36,10 +36,13 @@ class PreferencesRepository: NSObject {
             realm.add(favorite, update: true)
         }
     }
-    
+
     func insert(entity: PanelPrefsEntity) {
         let realm = try! Realm()
         try! realm.write {
+            if let current = realm.objects(PanelPrefsEntity.self).filter("key = %@ AND device = %@", entity.key, entity.device).first {
+                realm.delete(current)
+            }
             realm.add(entity, update: true)
         }
     }

@@ -15,19 +15,55 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     var elevatorEntity: ElevatorEntity? = nil
     var intent: PanelAction? = nil
     var prefs: Results<PanelPrefsEntity>? = nil
+    var notificationToken: NotificationToken? = nil
     var buttonClicked: String? = nil
-    
+
     @IBOutlet weak var sevenSegment: UILabel!
     @IBOutlet weak var listView: UICollectionView!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let realm = try! Realm()
         prefs = realm.objects(PanelPrefsEntity.self).filter("device = %@", intent!.device)
         elevatorEntity = realm.objects(ElevatorEntity.self).filter("device = %@", intent!.device).first
+        // Observe Results Notifications
+        notificationToken = prefs?.observe { [weak self] (changes: RealmCollectionChange) in
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                self?.reloadButtonLabels()
+            case .update(_, _, _, _):
+                // Query results have changed, so apply them to the UITableView
+                self?.reloadButtonLabels()
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            }
+        }
         navigationItem.title = elevatorEntity?.elvDescription
+    }
+
+    func reloadButtonLabels() {
+        button1.setTitle("+", for: .normal)
+        button2.setTitle("+", for: .normal)
+        button3.setTitle("+", for: .normal)
+        button4.setTitle("+", for: .normal)
+        prefs?.forEach { pref in
+            let floor = String(pref.floor)
+            switch pref.key {
+            case KeyDef.B1: button1.setTitle(floor, for: .normal)
+            case KeyDef.B2: button2.setTitle(floor, for: .normal)
+            case KeyDef.B3: button3.setTitle(floor, for: .normal)
+            case KeyDef.B4: button4.setTitle(floor, for: .normal)
+            default: return
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +86,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                                             SoundManager.sharedInstance.playDing()
                                         }
                                     }
-                                    
+
                                     if element.online == true {
                                         self.sevenSegment.text = String(element.floor ?? 0)
                                     } else {
@@ -135,7 +171,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     @IBAction func onB4Clicked(_ sender: Any) {
         onFavoriteClicked(KeyDef.B4)
     }
-    
+
     func onFavoriteClicked(_ key: String) {
         if let favorite = prefs?.filter("key = %@", key).first {
             NetworkService.sharedInstance.sendRelayOrder(device: favorite.device, floor: favorite.floor)
@@ -154,10 +190,14 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                 prefs.device = entity.device
                 prefs.groupId = entity.groupId
                 prefs.floor = floor
-                
+
                 PreferencesRepository.sharedInstance.insert(entity: prefs)
             }
         }
+    }
+
+    deinit {
+        notificationToken?.invalidate()
     }
 
     override func didReceiveMemoryWarning() {

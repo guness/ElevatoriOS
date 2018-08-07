@@ -75,7 +75,7 @@ class MainViewController: SGViewController {
         }
     }
 
-    func getType(key: String) throws -> String? {
+    func getType(key: String) -> String? {
         switch (key) {
         case KeyDef.L1, KeyDef.L2, KeyDef.L3, KeyDef.L4:
             return TypeDef.TYPE_ELEVATOR
