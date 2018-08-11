@@ -125,11 +125,10 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                             })
 
             //TODO: handle better
-            do {
-                try NetworkService.sharedInstance.sendListenDevice(device: intent.device)
-            } catch {
+            if !NetworkService.sharedInstance.sendListenDevice(device: intent.device) {
                 displayError()
             }
+            
             if let floor = intent.floor {
                 sendRelayOrder(device: intent.device, floor: floor)
             }
@@ -138,7 +137,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        try? NetworkService.sharedInstance.sendStopListenDevice(device: intent!.device)
+        _ = NetworkService.sharedInstance.sendStopListenDevice(device: intent!.device)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -159,9 +158,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
     }
 
     func sendRelayOrder(device: String, floor: Int) {
-        do {
-            try NetworkService.sharedInstance.sendRelayOrder(device: device, floor: floor)
-        } catch {
+        if !NetworkService.sharedInstance.sendRelayOrder(device: device, floor: floor) {
             displayError()
         }
     }

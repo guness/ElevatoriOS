@@ -34,19 +34,18 @@ class NetworkService: NSObject, SRWebSocketDelegate {
             webSocket.open()
         }
     }
-
-    public func sendMessage<T>(message: T) throws where T: AbstractMessage {
+    
+    private func sendMessage<T>(message: T) -> Bool where T: AbstractMessage {
         let json = try! String(data:JSONEncoder().encode(message), encoding: .utf8)!
 
         if kLog.TracePackets && kLog.Trace {
             os_log("%@: sendMessage %@", String(describing: type(of: self)), json)
         }
-        let exception = tryBlock {
+        let error = tryBlock {
             self.webSocket.send(json)
         }
-        if exception != nil {
-            throw ElevatorError.connectionError
-        }
+        
+        return error == nil
     }
 
     func webSocketDidOpen(_ ws: SRWebSocket) {
@@ -61,14 +60,10 @@ class NetworkService: NSObject, SRWebSocketDelegate {
 
         let groups = realm.objects(GroupEntity.self)
         if (groups.count == 0) {
-            let fetch = Fetch(type: Fetch.TYPE_UUID)
-            fetch.uuid = Constants.DEMO_GROUP_UUID
-            try? sendMessage(message: FetchInfo(fetch: fetch))
+            _ = fetchUUID(Constants.DEMO_GROUP_UUID)
         } else {
             for group in groups {
-                let fetch = Fetch(type: Fetch.TYPE_UUID)
-                fetch.uuid = group.uuid
-                try? sendMessage(message: FetchInfo(fetch: fetch))
+                _ = fetchUUID(group.uuid)
             }
         }
     }
@@ -129,25 +124,25 @@ class NetworkService: NSObject, SRWebSocketDelegate {
         }
     }
 
-    func fetchUUID(_ uuid: String) throws {
+    func fetchUUID(_ uuid: String)  -> Bool {
         let fetch = Fetch(type: Fetch.TYPE_UUID)
         fetch.uuid = uuid
-        try sendMessage(message: FetchInfo(fetch: fetch))
+        return sendMessage(message: FetchInfo(fetch: fetch))
     }
 
-    func sendRelayOrder(device: String, floor: Int) throws {
+    func sendRelayOrder(device: String, floor: Int) -> Bool {
         let order = Order()
         order.floor = floor
         order.device = device
-        try sendMessage(message: RelayOrder(order: order))
+        return sendMessage(message: RelayOrder(order: order))
     }
 
-    func sendListenDevice(device: String) throws {
-        try sendMessage(message: ListenDevice(device: device))
+    func sendListenDevice(device: String) -> Bool {
+        return sendMessage(message: ListenDevice(device: device))
     }
 
-    func sendStopListenDevice(device: String) throws {
-        try sendMessage(message: StopListening(device: device))
+    func sendStopListenDevice(device: String) -> Bool {
+        return sendMessage(message: StopListening(device: device))
     }
 }
 

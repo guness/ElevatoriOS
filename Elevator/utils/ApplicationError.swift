@@ -1,5 +1,5 @@
 //
-//  ElevatorError.swift
+//  ApplicationError.swift
 //  Elevator
 //
 //  Created by Sinan Güneş on 11.08.2018.
@@ -7,6 +7,6 @@
 //
 
 import Foundation
-enum ElevatorError: Error {
-    case connectionError
+enum ApplicationError: Error {
+    case ConnectionError
 }

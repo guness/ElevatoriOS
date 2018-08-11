@@ -660,7 +660,7 @@
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shk-hz-tx6">
                                 <rect key="frame" x="99" y="64" width="120" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Open24DisplaySt" family="Open 24 Display St" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -890,7 +890,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="T7L-eg-HC1"/>
-        <segue reference="iFP-rd-mXs"/>
-        <segue reference="gec-KG-NvG"/>
+        <segue reference="8dL-Nw-A5T"/>
+        <segue reference="L31-qh-WLV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,7 +38,7 @@ class InfoViewController: SGViewController, UITableViewDataSource, UITableViewDe
                         self.progressIndicator.stopAnimating()
                     })
             
-            try? NetworkService.sharedInstance.fetchUUID(uuid)
+            _ = NetworkService.sharedInstance.fetchUUID(uuid)
             //TODO: handle better
         }
     }
