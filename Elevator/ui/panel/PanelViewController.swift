@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 import RxSwift
 import RealmSwift
 
-class PanelViewController: SGViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PanelViewController: SGViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var elevatorEntity: ElevatorEntity? = nil
     var intent: PanelAction? = nil
@@ -47,6 +48,9 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
             }
         }
         navigationItem.title = elevatorEntity?.elvDescription
+
+        let token = InstanceID.instanceID().token()
+        NetworkService.sharedInstance.connect(token)
     }
 
     func reloadButtonLabels() {
@@ -120,21 +124,25 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
                                 self.errorLabel.text = it.element!
                             })
 
-            NetworkService.sharedInstance.sendListenDevice(device: intent.device)
-
+            //TODO: handle better
+            do {
+                try NetworkService.sharedInstance.sendListenDevice(device: intent.device)
+            } catch {
+                displayError()
+            }
             if let floor = intent.floor {
-                NetworkService.sharedInstance.sendRelayOrder(device: intent.device, floor: floor)
+                sendRelayOrder(device: intent.device, floor: floor)
             }
         }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NetworkService.sharedInstance.sendStopListenDevice(device: intent!.device)
+        try? NetworkService.sharedInstance.sendStopListenDevice(device: intent!.device)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NetworkService.sharedInstance.sendRelayOrder(device: intent!.device, floor: positionToFloor(position: indexPath.item))
+        sendRelayOrder(device: intent!.device, floor: positionToFloor(position: indexPath.item))
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -150,9 +158,28 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
         return cell
     }
 
+    func sendRelayOrder(device: String, floor: Int) {
+        do {
+            try NetworkService.sharedInstance.sendRelayOrder(device: device, floor: floor)
+        } catch {
+            displayError()
+        }
+    }
+
+    func displayError() {
+        self.errorLabel.text = "Service Failed"//TODO: use strings
+        _ = Observable.just("")
+                .delay(RxTimeInterval(2), scheduler: backgroundScheduler)
+                .subscribeOn(backgroundScheduler)
+                .observeOn(mainScheduler)
+                .subscribe { it in
+                    self.errorLabel.text = ""
+                }
+    }
+
     @IBAction func onFloorSelected(_ sender: PanelButton) {
         if let intent = intent {
-            NetworkService.sharedInstance.sendRelayOrder(device: intent.device, floor: sender.floor)
+            sendRelayOrder(device: intent.device, floor: sender.floor)
         }
     }
 
@@ -174,7 +201,7 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
 
     func onFavoriteClicked(_ key: String) {
         if let favorite = prefs?.filter("key = %@", key).first {
-            NetworkService.sharedInstance.sendRelayOrder(device: favorite.device, floor: favorite.floor)
+            sendRelayOrder(device: favorite.device, floor: favorite.floor)
         } else {
             buttonClicked = key
             toFloorPicker(action: elevatorEntity!)

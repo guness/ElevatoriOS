@@ -39,11 +39,15 @@ class FloorsViewController: SGViewController, UICollectionViewDataSource, UIColl
     @IBAction func onFloorSelected(_ sender: PanelButton) {
         if let intent = intent {
             callback?(intent, sender.floor)
-            if let navigationController = navigationController {
-                navigationController.popViewController(animated: true)
-            } else {
-                dismiss(animated: true)
-            }
+            onDoneClicked(sender)
+        }
+    }
+    
+    override func onDoneClicked(_ sender: Any) {
+        if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true)
         }
     }
     

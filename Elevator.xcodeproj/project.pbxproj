@@ -63,6 +63,7 @@
 		B7E24BFA2117616D00BC5DCC /* PanelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E24BF92117616D00BC5DCC /* PanelAction.swift */; };
 		B7E24BFC2117B18500BC5DCC /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E24BFB2117B18500BC5DCC /* SoundManager.swift */; };
 		B7E24BFE2117B6D900BC5DCC /* elevator_ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7E24BFD2117B6D900BC5DCC /* elevator_ding.mp3 */; };
+		B7E98707211F223D001F4DD9 /* ElevatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E98706211F223D001F4DD9 /* ElevatorError.swift */; };
 		B7FB21F920193D0B00B3B49D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB21F820193D0B00B3B49D /* NetworkService.swift */; };
 		EBA8BCEE56D2F95AD30E27B7 /* Pods_ElevatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +154,9 @@
 		B7E24BF92117616D00BC5DCC /* PanelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAction.swift; sourceTree = "<group>"; };
 		B7E24BFB2117B18500BC5DCC /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		B7E24BFD2117B6D900BC5DCC /* elevator_ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator_ding.mp3; sourceTree = "<group>"; };
+		B7E98704211F1D95001F4DD9 /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
+		B7E98705211F1E15001F4DD9 /* Elevator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Elevator-Bridging-Header.h"; sourceTree = "<group>"; };
+		B7E98706211F223D001F4DD9 /* ElevatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorError.swift; sourceTree = "<group>"; };
 		B7FB21F820193D0B00B3B49D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BFDB885290E977D3F5A6FB5B /* Pods_ElevatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElevatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB90845DD8358BA4821DCF /* Pods-ElevatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElevatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElevatorUITests/Pods-ElevatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 			children = (
 				B7180870201BED50002A2A2C /* NetworkUtils.swift */,
 				B7E24BFB2117B18500BC5DCC /* SoundManager.swift */,
+				B7E98704211F1D95001F4DD9 /* ExceptionCatcher.h */,
+				B7E98706211F223D001F4DD9 /* ElevatorError.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				B78C8C59210C88FA0003534D /* Elevator.entitlements */,
 				B77B0FEE20150D5000DB0612 /* AppDelegate.swift */,
 				B70087172016696300A8A1EB /* Constants.swift */,
+				B7E98705211F1E15001F4DD9 /* Elevator-Bridging-Header.h */,
 				B718086F201BED37002A2A2C /* utils */,
 				B70A2A3C2018165D0063A5C3 /* fonts */,
 				B700870D20165EBB00A8A1EB /* db */,
@@ -748,6 +755,7 @@
 				B7A9D4F7203967B300C80DCF /* StopListening.swift in Sources */,
 				B700871020165F4B00A8A1EB /* MainViewController.swift in Sources */,
 				B791CEF921164B8E004174BE /* OrderEntity.swift in Sources */,
+				B7E98707211F223D001F4DD9 /* ElevatorError.swift in Sources */,
 				B7A9D50D2039B70500C80DCF /* ElevatorEntity.swift in Sources */,
 				B75B6193211109750088939E /* PanelButton.swift in Sources */,
 				B791CEF5211648D4004174BE /* SettingsEntity.swift in Sources */,
@@ -954,6 +962,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.guness.elcall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Elevator/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -975,6 +984,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Elevator/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
