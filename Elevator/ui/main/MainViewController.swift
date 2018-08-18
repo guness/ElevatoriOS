@@ -124,6 +124,73 @@ class MainViewController: SGViewController {
         onFavoriteClicked(KeyDef.R4)
     }
 
+    @IBAction func onL1LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.L1)
+        }
+    }
+    
+    @IBAction func onL2LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.L2)
+        }
+    }
+    
+    @IBAction func onL3LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.L3)
+        }
+    }
+    
+    @IBAction func onL4LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.L4)
+        }
+    }
+    
+    @IBAction func onR1LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.R1)
+        }
+    }
+    
+    @IBAction func onR2LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.R2)
+        }
+    }
+    
+    @IBAction func onR3LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.R3)
+        }
+    }
+    
+    @IBAction func onR4LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.R4)
+        }
+    }
+    
+    func onFavoriteLongClicked(_ key: String) {
+        let type = getType(key: key)
+        
+        if let favorite = favorites?.filter("key = %@", key).first {
+            var message: String? = nil
+            if type == TypeDef.TYPE_FLOOR {
+                message = "Are you sure you would like to remove floor #\(favorite.floor) from \(favorite.favDescription ?? "elevator" )?"
+            } else if type == TypeDef.TYPE_ELEVATOR {
+                message = "Are you sure you would like to remove elevator \(favorite.favDescription ?? "")?"
+            }
+            let alert = UIAlertController(title: "Remove favorite?", message: message , preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Remove", comment: "Default action"), style: .destructive, handler: { _ in
+                PreferencesRepository.sharedInstance.delete(entity: favorite)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func onFavoriteClicked(_ key: String) {
         let type = getType(key: key)
 

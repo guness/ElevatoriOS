@@ -470,77 +470,93 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-Mk-Kp8">
                                 <rect key="frame" x="84" y="387" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="Elevator" backgroundImage="ButtonActive"/>
                                 <connections>
                                     <action selector="onL4Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="czw-fa-5Bp"/>
+                                    <outletCollection property="gestureRecognizers" destination="eaO-fr-AVz" appends="YES" id="tcb-1o-60r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuR-nF-QyM">
                                 <rect key="frame" x="84" y="298" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="Elevator" backgroundImage="ButtonActive"/>
                                 <connections>
                                     <action selector="onL3Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="xlb-f1-rDd"/>
+                                    <outletCollection property="gestureRecognizers" destination="3XZ-ye-OQf" appends="YES" id="hLw-86-C4G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P29-Ve-Bhq">
                                 <rect key="frame" x="84" y="211" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="Elevator" backgroundImage="ButtonActive"/>
                                 <connections>
                                     <action selector="onL2Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="Jfl-0y-9GR"/>
+                                    <outletCollection property="gestureRecognizers" destination="OXG-RS-kJI" appends="YES" id="Uou-z8-bDu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvO-bI-zMK">
                                 <rect key="frame" x="84" y="123" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="Elevator" backgroundImage="ButtonActive"/>
                                 <connections>
                                     <action selector="onL1Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="7e0-aI-49o"/>
+                                    <outletCollection property="gestureRecognizers" destination="x8g-zr-ykU" appends="YES" id="1Fd-Tr-G0z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-7K-bTp">
                                 <rect key="frame" x="175" y="299" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="+" backgroundImage="ButtonActive">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onR3Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="izb-DS-yCA"/>
+                                    <outletCollection property="gestureRecognizers" destination="2gd-TZ-B31" appends="YES" id="LJt-9m-Pco"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsF-S3-EWc">
                                 <rect key="frame" x="175" y="211" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="+" backgroundImage="ButtonActive">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onR2Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="XQU-ee-mrh"/>
+                                    <outletCollection property="gestureRecognizers" destination="XtK-4K-aW3" appends="YES" id="hOL-Ei-etl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyS-Rg-uqR">
                                 <rect key="frame" x="175" y="122" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="+" backgroundImage="ButtonActive">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onR1Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="tXs-gi-5Xy"/>
+                                    <outletCollection property="gestureRecognizers" destination="I25-Jp-Arr" appends="YES" id="pLh-Cy-GfY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiD-sw-v5P">
                                 <rect key="frame" x="175" y="387" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="+" backgroundImage="ButtonActive">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onR4Clicked:" destination="mdz-9x-vjb" eventType="touchUpInside" id="dZP-du-gZY"/>
+                                    <outletCollection property="gestureRecognizers" destination="Spc-VJ-mBt" appends="YES" id="MOi-6D-4Yi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kCN-xe-VTL">
@@ -629,6 +645,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fL-r8-vpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="x8g-zr-ykU">
+                    <connections>
+                        <action selector="onL1LongClicked:" destination="mdz-9x-vjb" id="0rI-3t-tZE"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="OXG-RS-kJI">
+                    <connections>
+                        <action selector="onL2LongClicked:" destination="mdz-9x-vjb" id="MXK-38-f8z"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="3XZ-ye-OQf">
+                    <connections>
+                        <action selector="onL3LongClicked:" destination="mdz-9x-vjb" id="9sR-5c-unm"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="eaO-fr-AVz">
+                    <connections>
+                        <action selector="onL4LongClicked:" destination="mdz-9x-vjb" id="YCg-es-bVF"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="I25-Jp-Arr">
+                    <connections>
+                        <action selector="onR1LongClicked:" destination="mdz-9x-vjb" id="e5S-Jx-6hg"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="XtK-4K-aW3">
+                    <connections>
+                        <action selector="onR2LongClicked:" destination="mdz-9x-vjb" id="Xqe-pp-k3g"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2gd-TZ-B31">
+                    <connections>
+                        <action selector="onR3LongClicked:" destination="mdz-9x-vjb" id="aKQ-CN-5Cl"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Spc-VJ-mBt">
+                    <connections>
+                        <action selector="onR4LongClicked:" destination="mdz-9x-vjb" id="IL5-me-sxk"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1014.375" y="721.47887323943667"/>
         </scene>

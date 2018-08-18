@@ -53,6 +53,13 @@ class PreferencesRepository: NSObject {
             realm.delete(entity)
         }
     }
+    
+    func delete(entity: FavoriteEntity) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(entity)
+        }
+    }
 
     func insertOrder(device: String, floor: Int) {
         let realm = try! Realm()
