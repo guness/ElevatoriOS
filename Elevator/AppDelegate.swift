@@ -73,10 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         */
-        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
             // potentially lengthy data migration
-        })
-        Realm.Configuration.defaultConfiguration = config
+        }, deleteRealmIfMigrationNeeded : true)
         os_log("%@: didFinishLaunchingWithOptions realm File: %@", String(describing: type(of: self)), realmURL.absoluteString)
         return true
     }

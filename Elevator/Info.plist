@@ -48,7 +48,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) camera use</string>
+	<string>Scan QR Code</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Open 24 Display St.ttf</string>

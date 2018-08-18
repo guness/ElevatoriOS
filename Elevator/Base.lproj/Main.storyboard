@@ -669,41 +669,49 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw9-hx-0EB">
                                 <rect key="frame" x="240" y="528" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="+" backgroundImage="MetalBorder">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="onB4Clicked:" destination="Cs2-a3-eFw" eventType="touchUpInside" id="aJ4-61-W8t"/>
+                                    <outletCollection property="gestureRecognizers" destination="kSC-Hl-pmj" appends="YES" id="yD3-J9-k3R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GB-Q3-SBz">
                                 <rect key="frame" x="160" y="528" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="+" backgroundImage="MetalBorder">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="onB3Clicked:" destination="Cs2-a3-eFw" eventType="touchUpInside" id="Rpc-ec-2p6"/>
+                                    <outletCollection property="gestureRecognizers" destination="NeR-2d-UdB" appends="YES" id="EXR-sq-WP8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYX-Bo-ZuW">
                                 <rect key="frame" x="80" y="528" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="+" backgroundImage="MetalBorder">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="onB2Clicked:" destination="Cs2-a3-eFw" eventType="touchUpInside" id="AEA-eh-rPi"/>
+                                    <outletCollection property="gestureRecognizers" destination="1tv-NY-yjz" appends="YES" id="Cmm-vl-GMq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9um-mJ-eWK">
                                 <rect key="frame" x="0.0" y="528" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="+" backgroundImage="MetalBorder">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="onB1Clicked:" destination="Cs2-a3-eFw" eventType="touchUpInside" id="hLf-SA-o1f"/>
+                                    <action selector="onB1Clicked:" destination="Cs2-a3-eFw" eventType="touchUpInside" id="SVr-Lt-RBK"/>
+                                    <outletCollection property="gestureRecognizers" destination="RhH-8X-UtA" appends="YES" id="t5O-4Y-vbM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI5-kk-JpV">
@@ -781,6 +789,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRC-dj-1MT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="RhH-8X-UtA">
+                    <connections>
+                        <action selector="onB1LongClicked:" destination="Cs2-a3-eFw" id="uKb-cZ-MA0"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1tv-NY-yjz">
+                    <connections>
+                        <action selector="onB2LongClicked:" destination="Cs2-a3-eFw" id="1sU-zZ-L1Q"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NeR-2d-UdB">
+                    <connections>
+                        <action selector="onB3LongClicked:" destination="Cs2-a3-eFw" id="iex-ga-SaF"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="kSC-Hl-pmj">
+                    <connections>
+                        <action selector="onB4LongClicked:" destination="Cs2-a3-eFw" id="VPy-oC-ESm"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2011.875" y="716.19718309859161"/>
         </scene>
@@ -890,7 +918,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="T7L-eg-HC1"/>
-        <segue reference="8dL-Nw-A5T"/>
-        <segue reference="L31-qh-WLV"/>
+        <segue reference="iFP-rd-mXs"/>
+        <segue reference="gec-KG-NvG"/>
     </inferredMetricsTieBreakers>
 </document>

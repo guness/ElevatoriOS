@@ -204,6 +204,41 @@ class PanelViewController: SGViewController, UICollectionViewDataSource, UIColle
             toFloorPicker(action: elevatorEntity!)
         }
     }
+    
+    @IBAction func onB1LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.B1)
+        }
+    }
+    
+    @IBAction func onB2LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.B2)
+        }
+    }
+    
+    @IBAction func onB3LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.B3)
+        }
+    }
+    
+    @IBAction func onB4LongClicked(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            onFavoriteLongClicked(KeyDef.B4)
+        }
+    }
+    
+    func onFavoriteLongClicked(_ key: String) {
+        if let favorite = prefs?.filter("key = %@", key).first {
+            let alert = UIAlertController(title: "Remove favorite?", message: "Are you sure you would like to remove floor #\(favorite.floor)?", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Remove", comment: "Default action"), style: .destructive, handler: { _ in
+                PreferencesRepository.sharedInstance.delete(entity: favorite)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
